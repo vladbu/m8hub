@@ -1,0 +1,270 @@
+@font-face {
+    font-family: belinda;
+    src: url(fonts/belinda.otf);
+}
+
+@font-face {
+    font-family: ubuntu-bold;
+    src: url(fonts/Ubuntu-B.ttf);
+}
+
+@font-face {
+    font-family: sans;
+    src: url(fonts/OpenSans-Semibold.ttf);
+}
+
+@font-face {
+    font-family: pt-sans-bold;
+    src: url(fonts/Pt-sans-bold.ttf);
+}
+
+@font-face {
+    font-family: entypo;
+    src: url(fonts/fontello.ttf);
+}
+
+* {
+    font-family: sans;
+}
+
+html {
+    box-sizing : border-box;
+    min-width: 800px;
+}
+h3 {
+    text-transform: uppercase;
+    font-family: pt-sans-bold;
+    margin: 0;
+    color: #384048;
+}
+a {
+    color: #50c3af;
+    text-decoration: none;
+}
+p {
+    color: #787b80;
+
+}
+hr.solid-line {
+    background: black;
+    opacity: 0.06;
+    height: 2px;
+}
+hr.gradient-line {
+    background-image: linear-gradient(90deg, black, transparent);
+    border: 0;
+    height: 2px;
+    opacity: 0.06;
+}
+button {
+    color: white;
+    font-family: pt-sans-bold;
+    background: #50c3af;
+    border: none;
+    width: fit-content;
+    border-radius: 10vw;
+    padding: 0.7rem 1rem;
+    cursor: pointer; 
+}
+
+/*Header styles here*/
+header {
+    background: url(./img/bg.png) no-repeat;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-content: center;
+    color: white;
+    padding: 5vh 10vw;
+}
+h1 {
+    font-family: belinda;
+    font-size: 4rem;
+    font-weight: 400;
+}
+header a{
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+header a:hover {
+    color: #50c3af;
+}
+header h2 {
+    font-family: ubuntu;
+    text-transform: uppercase;
+    font-size: 3.7rem;
+    margin: 0;
+    padding-top: 4rem;
+}
+header h3 {
+    color: white;
+}
+header h3::before, header h3::after {
+    background-color: #fff;
+    opacity: 0.24;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 10vw;
+    margin: 0 2vw;
+}
+header button {
+    text-transform: uppercase;  
+    margin-top: 8rem; 
+}
+
+/*Feauters styles here*/
+section.features {
+    background: #eeeeef;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5vw;
+    place-content: center center;
+    text-align: center;
+    padding: 5vh 10vw;
+}
+section.features img {
+    height: 35px;
+    margin: 1em;
+}
+section.features hr {
+    width: 10vw;
+}
+
+/*Section-1 styles here*/
+section.section-1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-content: center center;
+    grid-gap: 5vw;
+    padding: 5vh 10vw;
+}
+section.section-1 img {
+    width: 100%;
+}
+
+/*Section-2 styles here*/
+section.section-2 {
+    background: #eeeeef;
+    display: grid;
+    place-content: center center;
+    padding: 5vh 10vw;
+}
+section.section-2 h3::before{
+    content: " ";
+    font-family: entypo;
+    color: #787b80;
+}
+section.section-2 hr {
+    width: 100%;
+}
+section.section-2 button{
+    background: #d2d5da;
+}
+
+/*Section-3 styles here*/
+section.section-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 5vw;
+    place-content: center center;
+    padding: 5vh 10vw;
+}
+section.section-3 img{
+    width: 100%;
+}
+
+/*Section-4 styles here*/
+section.section-4 {
+    background: #eeeeef;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5vw;
+    place-content: center center;
+    padding: 5vh 10vw;
+}
+section.section-4 > div:first-of-type h3::before {
+    content: " ";
+    font-family: entypo;
+    color: #787b80;
+}
+section.section-4 > div:last-of-type h3::before {
+    content: " ";
+    font-family: entypo;
+    color: #787b80;
+}
+
+/*Section 5 styles here*/
+section.section-5 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5vw;
+    place-content: center center;
+    padding: 5vh 10vw; 
+}
+section.section-5 img {
+    width: 100%;
+}
+section.section-5 button {
+    background: #d2d5da;
+}
+
+/*Section 6 styles here*/
+section.section-6 {
+    background: #50c3af;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 5vw;
+    place-content: center center;
+    padding: 5vh 10vw;
+}
+section.section-6 div {
+    grid-column: span 4;
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+}
+section.section-6 h3{
+    color: white;
+}
+section.section-6 h3::before{
+    color: white;
+    content: " ";
+    font-family: entypo;
+}
+section.section-6 hr{
+    background: white;
+}
+section.section-6 img{
+    width: 100%;
+}
+
+
+/*Footer styles here*/
+footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-content: center;
+    padding: 3vh 10vw;
+    color: #b5b7b9;
+}
+footer span {
+    color: #384048;
+}
+footer a {
+    color: #b5b7b9;
+}
+footer div:last-of-type {
+    justify-self: end;
+}
+footer div:last-of-type a{
+    font-family: entypo;
+    letter-spacing: 1em;
+}
