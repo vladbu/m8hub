@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
+
+* {
+    font-family: Merriweather;
+    margin: 0px;
+    padding: 0px;
+    color: #3c3c3c;
+    font-size: 1vw;
+}
+
+body {
+    max-width: 100%;
+    max-height: 100%;
+}
+section {
+    max-height: 16%;
+}
+
+/* Header styles */
+header {
+    display: grid;
+    grid-template-columns: 40%;
+    justify-content: end;
+    background-image: url(img/header.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+.topMenu {
+    font-size: 1.25vw;
+    margin: 10% 0;
+}
+.topMenu a {
+    text-decoration: none;
+    margin: 0 1%;
+    padding: 1%;
+}
+.topMenu a:hover {
+    border: 1px solid #3c3c3c;
+    margin: 0 calc(1% - 1px);
+}
+.title {
+    font-weight: 400;
+    opacity: .6;
+    font-size: 2vw;
+    align-content: center;
+    margin: 40% 0 0 0;
+}
+header img {
+    margin: 0 0 50% 0;
+    justify-self: center;
+    height: auto;
+    width: 50%;
+}
+
+/* Columns styles */
+.columns {
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    justify-content: center;
+    text-align: center;
+    padding: 2%;
+    background-image: url(img/sectionsBg.png);
+}
+.columns > div h2 {
+    font-size: 1.25vw;
+    text-transform: uppercase;
+}
+.columns > div img{
+    height: 5vw;
+    width: auto;
+}
