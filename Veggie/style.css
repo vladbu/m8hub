@@ -44,7 +44,7 @@ header {
     opacity: .6;
     font-size: 2vw;
     align-content: center;
-    margin: 40% 0 0 0;
+    margin: 40% 0 3% 0;
 }
 header img {
     margin: 0 0 50% 0;
@@ -62,11 +62,51 @@ header img {
     padding: 2%;
     background-image: url(img/sectionsBg.png);
 }
-.columns > div h2 {
-    font-size: 1.25vw;
-    text-transform: uppercase;
-}
 .columns > div img{
     height: 5vw;
     width: auto;
+}
+.columns > div h2 {
+    font-size: 1.25vw;
+    text-transform: uppercase;
+    margin: 2% 0 2% 0;
+}
+.columns > div p {
+    opacity: 0.6;
+}
+
+/* Specials styles */
+.specials {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    padding: 5%;
+}
+.specials h1 {
+    font-size: 2vw;
+}
+.specials img {
+    margin-top: 2%;
+}
+.specials .wrapper {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    height: 100%;
+    padding: 5%;
+    text-align: center;
+}
+.specials .wrapper img {
+    width: 100%;
+}
+.specials .wrapper h2 {
+    margin: 5% auto;
+}
+.specials .wrapper hr {
+    width: 50%;
+    align-self: center;
+    margin: 5% auto;
+}
+.specials .wrapper div {
+    background-color: #f8f8f8;
+    padding-top: 25%;
 }
