@@ -7,7 +7,7 @@
     <meta name="google-site-verification" content="C_d6eGFgV8f8bpGzd8p_WU0Wtkl5bA7G_NkSfdXERyY" />
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js"></script>
+    <!-- <script src="js/script.js"></script> -->
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASkJrU5eNthA2E1nxGWLguR_VuS9gVSSc&callback=initMap">
     </script>
@@ -168,14 +168,10 @@
                 </div>
                 <script>
                     function initMap() {
-                        // The location of Uluru
-                        var uluru = {lat: -25.344, lng: 131.036};
-                        // The map, centered at Uluru
+                        var location = {lat: -25.344, lng: 131.036};
                         var map = new google.maps.Map(
-                            document.getElementById('map'), {zoom: 4, center: uluru});
-                        // The marker, positioned at Uluru
-                        var marker = new google.maps.Marker({position: uluru, map: map});
-                        console.log('Map initialized')
+                            document.getElementById('map'), {zoom: 4, center: location});
+                        var marker = new google.maps.Marker({position: location, map: map});
                     }
                 </script>
         </div>
