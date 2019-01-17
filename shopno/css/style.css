@@ -278,6 +278,17 @@ div.testimonial-controls {
     grid-column: 2/3;
     justify-self: end;
 }
+div.testimonial-controls button {
+    border: none;
+    border-radius: .1vw;
+    color: #b2b2b2;
+    box-shadow: 0px .1vw .31vw .11vw rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+div.testimonial-controls button:hover {
+    background: #71f6eb;
+    color: #2f6763;
+}
 
 /* .logos */
 section.logos {
@@ -306,23 +317,24 @@ section.contact form, div.adress  {
     color: rgba(255, 255, 255, 0.7);
     background-color: rgba(2, 22, 35, .7);
 }
-section.contact input {
+section.contact input, textarea {
     color: rgba(255, 255, 255, 0.7);
     margin: 1%;
     width: 100%;
     background: none;
     border: none;
     border-bottom: .1vw solid rgba(255, 255, 255, .7);
-    text-align: start;
 }
-section.contact input:nth-last-of-type(2) {
-    height: 25vw;
+section.contact textarea {
+    resize: none;
+    height: 40vh;
 }
 section.contact input[type="submit"] {
     text-transform: uppercase;
     padding: 1% 5%;
     color: black;
     width: 50%;
+    text-align: center;
     background: #6eeee4;
     border: none;
     border-radius: .2vw;

@@ -142,8 +142,8 @@
             <img src="img/stars.png" alt="" class="rating">
         </div>
         <div class="testimonial-controls">
-            <button> arrow-left </button>
-            <button> arrow-right </button>    
+            <button> <i class="icon-left-open"></i> </button>
+            <button> <i class="icon-right-open"></i> </button>    
         </div>
     </section>
     <section class="logos"></section>
@@ -152,7 +152,7 @@
             <input type="text" required placeholder="Name"> <br>
             <input type="text" required placeholder="Subject"> <br>
             <input type="email" required placeholder="E-mail"> <br>
-            <input type="text" required placeholder="Message"> <br>
+            <textarea required placeholder="Message"></textarea>
             <input type="submit" value="send message">
         </form>
         <div class="adress">
@@ -166,9 +166,9 @@
                 <div id="map">
                     <script>
                         function initMap() {
-                            var location = {lat: -25.344, lng: 131.036};
+                            var location = {lat: 50.4501, lng: 30.523400000000038};
                             var map = new google.maps.Map(
-                                document.getElementById('map'), {zoom: 4, center: location});
+                                document.getElementById('map'), {zoom: 15, center: location});
                             var marker = new google.maps.Marker({position: location, map: map});
                         }
                     </script>
