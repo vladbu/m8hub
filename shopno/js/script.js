@@ -1,17 +1,7 @@
-window.onload = function() {
-    let knowMore = document.body.querySelectorAll('.services a');
-    console.log(knowMore);
-    knowMore.onclick = function () {
-        console.log('clicked');
-    }
-
-    function initMap() {
-        // The location of Uluru
-        var uluru = {lat: -25.344, lng: 131.036};
-        // The map, centered at Uluru
-        var map = new google.maps.Map(
-            document.getElementById('map'), {zoom: 4, center: uluru});
-        // The marker, positioned at Uluru
-        var marker = new google.maps.Marker({position: uluru, map: map});
-    }
+window.onload = function aboutCarousel() {
+        let aboutItems = document.querySelectorAll('.about-carousel, .about-hidden');
+        for (let i = 0; i < aboutItems.length; i++) {
+            setInterval(aboutItems[i].classList.add('about-visible'), 500+i*50);
+            console.log(aboutItems);
+        }
 }
