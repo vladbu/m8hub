@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=Exo');
+
+body {
+    width: 500px;
+    margin: 20px auto;
+    background: linear-gradient(to bottom, #64646433 0%, #ffffff80 40%, #ffffff 100%);
+    background-repeat: no-repeat;
+  }
+.ball {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle at 100px 100px, #464545, #000000);
+    cursor: pointer;
+    box-shadow: 50px 97px 85px -50px rgba(0,0,0,0.57), inset 0px 0px 103px 4px rgba(0,0,0,0.75);
+}
+.window {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: whitesmoke;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+    font-size: 10em;
+    font-family: 'Exo', sans-serif;
+    font-weight: 900;
+    text-align: center;
+}
+h1 {
+    text-align: center;
+}
+@keyframes shake {
+    from,
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        -webkit-transform: translate3d(-10px, 0, 0);
+        transform: translate3d(-10px, 0, 0);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        -webkit-transform: translate3d(10px, 0, 0);
+        transform: translate3d(10px, 0, 0);
+    }
+}
+@keyframes windowChange {
+    from {
+        font-size: 1em;
+    }
+    to {
+        background-color: darkblue;
+        color: white;
+        border: solid #010252;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 1em;
+        box-shadow: inset 0px 0px 103px 4px rgba(0,0,0,0.75);
+    }
+}
