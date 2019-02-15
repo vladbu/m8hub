@@ -7,7 +7,6 @@
     <meta name="google-site-verification" content="C_d6eGFgV8f8bpGzd8p_WU0Wtkl5bA7G_NkSfdXERyY" />
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/style.css">
-    <!-- <script src="js/script.js"></script> -->
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASkJrU5eNthA2E1nxGWLguR_VuS9gVSSc&callback=initMap">
     </script>
@@ -19,7 +18,7 @@
         <button class="menue"> <i class="icon-menue"></i> </button>
         
         <h1> Say hello to <mark>shopno!</mark><br> 
-            <mark>Agency</mark> corporate shopno theme</h1>
+            <mark>Agency</mark> corporate shopno theme </h1>
         <button class="contactUs">contact us</button>
     </header>
     <section class="about">
@@ -27,8 +26,12 @@
             <h2>about us</h2>
             <p>Lorem ipsum dolor sit amet event landing template</p>
         </div>
-        <div>
-            <img src="img/aboutCarousel.png" alt="" class="about-carousel">
+        <div class="about-carousel-wrapper">
+            <img src="./img/aboutCarousel1.png" id="carouselImage">
+            <input type="radio" name="carouselSelect" value="1" checked>
+            <input type="radio" name="carouselSelect" value="2">
+            <input type="radio" name="carouselSelect" value="3">
+            <input type="radio" name="carouselSelect" value="4">    
         </div>
         <div class="about-text">
             <h3>We Actually Do amazing works</h3>
@@ -192,5 +195,6 @@
             Copyright Masum Parvej, All Rights Reserved
         </p>
     </footer>
+    <script src="js/script.js"></script>
 </body>
 </html>
