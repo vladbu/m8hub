@@ -29,6 +29,10 @@ header {
 }
 header #search {
     margin: 1% 0;
+    background-image: url(../img/search.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
 }
 header h1 {
     margin: 5% 0;
@@ -36,16 +40,24 @@ header h1 {
     color: #3cc3b5;
     justify-self: center;
 }
+header div.cart {
+    justify-self: center;
+    display: flex;
+    align-items: center;
+}
 header div.cart button {
-    width: 45%;
+    height: 40px;
+    width: 40px;
     margin: 5% 0;
+    border: none;
     background-image: url(../img/basket.png);
     background-repeat: no-repeat;
-    border: none;
+    background-size: contain;
     background-color: white;
 }
-header div.cart {
-    
+header div.cart h3{
+    color: #afafaf;
+    margin-left:6%;
 }
 nav {
     grid-column: 1/4;
