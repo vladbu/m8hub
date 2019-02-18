@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+body {
+    background-color: #3dc6b4;
+    color: white;
+    min-width: 940px;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+h2 {
+    text-transform: uppercase;
+}
+
+/* header */
+header {
+    width: 100%;
+    background-color: white;
+    display: grid;
+    grid-template-columns: .5fr 2fr .5fr;
+    grid-column-gap: 1%;
+}
+header #search {
+    margin: 1% 0;
+}
+header h1 {
+    margin: 5% 0;
+    font-family: 'Lobster', cursive;
+    color: #3cc3b5;
+    justify-self: center;
+}
+header div.cart button {
+    width: 45%;
+    margin: 5% 0;
+    background-image: url(../img/basket.png);
+    background-repeat: no-repeat;
+    border: none;
+    background-color: white;
+}
+header div.cart {
+    
+}
+nav {
+    grid-column: 1/4;
+    background-color: #4ccfc1;
+    box-shadow: 0px 2px 8px 0px rgba(0,0,0,.2);
+    text-transform: uppercase;
+    padding: 1%;
+    font-weight: 400;
+    text-align: center;
+}
+nav a {
+    display: inline;
+}
+nav a::after {
+    content: ' | '
+}
+nav a:last-of-type::after {
+    content: none;
+}
+/* categories */
+
+/* products */
+section.products-container {
+    display: flex;
+    flex-direction: column;
+}
+section.products-container h2{
+    padding: 1% 9%;
+}
+div.products {
+    padding: 5%;
+    background-color: white;
+    color: #afafaf;
+    text-transform: uppercase;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10%;
+    justify-items: center;
+}
+div.products div.product {
+    box-shadow: 0px 0px 8px 0px rgba(0,0,0,.2);
+    width: 200px;
+    padding: 5%;
+    border-bottom: solid #3cc395 5px;
+    text-align: center;
+}
+div.products div.product img{
+    max-width: 100%;
+}
+div.products div.product div button{
+    font-size: 1em;
+    text-transform: uppercase;
+    color: white;
+    background-color: #3cc395;
+    border-radius: 5px;
+    border: solid 0px;
+    margin-left: 5%;
+    padding: 1.5%;
+}
+div.products div.product div > *{
+    display: inline;
+}
+
+/* footer */
+footer {
+    width: 100%;
+    padding-top: 1%;
+}
+footer h2 {
+    text-transform: uppercase;
+    margin: 5% 0;
+}
+footer section.map{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center
+}
+footer section.map a {
+    display: block;
+}
+footer section.copyright {
+    margin-top: 1%;
+    padding: .5%;
+    text-align: center;
+    background-color: #2da89b;
+}
