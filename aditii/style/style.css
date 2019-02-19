@@ -1,5 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400:600:800');
 @import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
+@font-face{
+    font-family: BebasNeue;
+    src: url(../fonts/BebasNeue-Regular.otf)
+}
 
 * {
     margin: 0;
@@ -17,6 +22,12 @@ a{
 }
 h2 {
     text-transform: uppercase;
+}
+.glide__bullet{
+    border: none;
+}
+.glide__bullet[class*=active] {
+    opacity: .5;
 }
 
 /* header */
@@ -53,6 +64,7 @@ header form.search button{
     border: none;
     background: url(../img/search.png) center no-repeat;
     background-size: contain;
+    cursor: pointer;
 }
 header div.cart {
     justify-self: center;
@@ -64,10 +76,9 @@ header div.cart button {
     width: 40px;
     margin: 5% 0;
     border: none;
-    background-image: url(../img/basket.png);
-    background-repeat: no-repeat;
+    background: url(../img/basket.png) center no-repeat;
     background-size: contain;
-    background-color: white;
+    cursor: pointer;
 }
 header div.cart h3{
     color: #afafaf;
@@ -90,6 +101,44 @@ nav a::after {
 }
 nav a:last-of-type::after {
     content: none;
+}
+/* banner */
+section.banner {
+    display: flex;
+    text-align: center;
+    padding: 5%;
+}
+section.banner li.glide__slide {
+    display: grid;
+    grid-template-columns: repeat(2, 40%);
+    justify-content: center;
+    text-align: initial;
+}
+section.banner li.glide__slide h2{
+    font-family: BebasNeue;
+    text-transform: uppercase;
+    font-size: 4em;
+}
+section.banner li.glide__slide p{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    margin: 5% 0;
+}
+section.banner li.glide__slide button{
+    padding: 2%;
+    background: none;
+    border: .3vh solid white;
+    border-radius: .7vh; 
+    text-transform: uppercase;
+    font-weight: 800;
+    color: white;
+    cursor: pointer;
+}
+section.banner div.glide__bullets button.glide__bullet{
+    border-radius: 50%;
+    width: 1vh;
+    height: 1vh;
+
 }
 /* categories */
 
@@ -131,6 +180,7 @@ div.products div.product div button{
     border: solid 0px;
     margin-left: 5%;
     padding: 1.5%;
+    cursor: pointer;
 }
 div.products div.product div > *{
     display: inline;
@@ -152,6 +202,7 @@ footer section.map{
 }
 footer section.map a {
     display: block;
+    margin: .2em;
 }
 footer section.copyright {
     margin-top: 1%;

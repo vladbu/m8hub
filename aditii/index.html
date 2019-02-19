@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./node_modules/@glidejs/glide/dist/css/glide.core.min.css">
     <title>Aditii</title>
 </head>
 <body>
@@ -31,7 +32,64 @@
             <a href="#">contact us</a>
         </nav>        
     </header>
-    <section class="banner"></section>
+    <section class="banner">
+        <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+                <li class="glide__slide">
+                    <img src="./img/banner1.png" alt="">
+                    <div>
+                        <h2>Cowhide standart crew 1</h2>
+                        <p>White coloured, short-sleeved, printed T-shirt for men by Levi's. 
+                            This crew-neck T-shirt is made of organic cotton and comes in a regular fit. </p>
+                        <button>shop now</button>
+                    </div>
+                </li>
+                <li class="glide__slide">
+                    <img src="./img/banner1.png" alt="">
+                    <div>
+                        <h2>Cowhide standart crew 2</h2>
+                        <p>White coloured, short-sleeved, printed T-shirt for men by Levi's. 
+                            This crew-neck T-shirt is made of organic cotton and comes in a regular fit. </p>
+                        <button>shop now</button>
+                    </div>
+                </li>
+                <li class="glide__slide">
+                    <img src="./img/banner1.png" alt="">
+                    <div>
+                        <h2>Cowhide standart crew 3</h2>
+                        <p>White coloured, short-sleeved, printed T-shirt for men by Levi's. 
+                            This crew-neck T-shirt is made of organic cotton and comes in a regular fit. </p>
+                        <button>shop now</button>
+                    </div>
+                </li>
+                <li class="glide__slide">
+                    <img src="./img/banner1.png" alt="">
+                    <div>
+                        <h2>Cowhide standart crew 4</h2>
+                        <p>White coloured, short-sleeved, printed T-shirt for men by Levi's. 
+                            This crew-neck T-shirt is made of organic cotton and comes in a regular fit. </p>
+                        <button>shop now</button>
+                    </div>
+                </li>
+                <li class="glide__slide">
+                    <img src="./img/banner1.png" alt="">
+                    <div>
+                        <h2>Cowhide standart crew 5</h2>
+                        <p>White coloured, short-sleeved, printed T-shirt for men by Levi's. 
+                            This crew-neck T-shirt is made of organic cotton and comes in a regular fit. </p>
+                        <button>shop now</button>
+                    </div>
+                </li>
+            </ul>
+            <div class="glide__bullets" data-glide-el="controls[nav]">
+                <button class="glide__bullet" data-glide-dir="=0"></button>
+                <button class="glide__bullet" data-glide-dir="=1"></button>
+                <button class="glide__bullet" data-glide-dir="=2"></button>
+                <button class="glide__bullet" data-glide-dir="=3"></button>
+                <button class="glide__bullet" data-glide-dir="=4"></button>
+            </div>
+        </div>
+    </section>
     <section class="categories">
 
     </section>
@@ -139,5 +197,16 @@
             <p>Copyright &copy 2013 Css Author</p>
         </section>
     </footer>
+    <!-- <script src="./src/index.js"></script> -->
+    <script src="./node_modules/@glidejs/glide/dist/glide.js"></script>
+
+    <script>
+        new Glide('.banner', {
+            autoplay: 4000,
+            hoverpause: true,
+            keyboard: true,
+
+        }).mount()
+    </script>
 </body>
 </html>
