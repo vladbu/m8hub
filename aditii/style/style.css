@@ -27,18 +27,32 @@ header {
     grid-template-columns: .5fr 2fr .5fr;
     grid-column-gap: 1%;
 }
-header #search {
-    margin: 1% 0;
-    background-image: url(../img/search.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: right;
-}
 header h1 {
     margin: 5% 0;
     font-family: 'Lobster', cursive;
     color: #3cc3b5;
     justify-self: center;
+    font-size: 3em;
+}
+header form.search {
+    margin: 2% 0;
+    padding: .5`%;
+    font-size: 1em;
+    display: flex;
+    border: .1vh solid #e1e1e1;
+}
+header form.search > * {
+    height: 100%;
+}
+header form.search input[type=text]{
+    width: 95%;
+    border: none
+}
+header form.search button{
+    width: 5%;
+    border: none;
+    background: url(../img/search.png) center no-repeat;
+    background-size: contain;
 }
 header div.cart {
     justify-self: center;
@@ -93,9 +107,10 @@ div.products {
     color: #afafaf;
     text-transform: uppercase;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 20%);
     grid-gap: 10%;
     justify-items: center;
+    justify-content: center;
 }
 div.products div.product {
     box-shadow: 0px 0px 8px 0px rgba(0,0,0,.2);
@@ -123,7 +138,6 @@ div.products div.product div > *{
 
 /* footer */
 footer {
-    width: 100%;
     padding-top: 1%;
 }
 footer h2 {
@@ -132,8 +146,9 @@ footer h2 {
 }
 footer section.map{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    justify-items: center
+    grid-template-columns: repeat(4, 20%);
+    justify-items: center;
+    justify-content: center;
 }
 footer section.map a {
     display: block;
