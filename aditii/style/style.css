@@ -36,7 +36,7 @@ header h1 {
 }
 header form.search {
     margin: 2% 0;
-    padding: .5`%;
+    padding: .5%;
     font-size: 1em;
     display: flex;
     border: .1vh solid #e1e1e1;
@@ -99,7 +99,7 @@ section.products-container {
     flex-direction: column;
 }
 section.products-container h2{
-    padding: 1% 9%;
+    padding: 1% 5vw;
 }
 div.products {
     padding: 5%;
@@ -146,7 +146,7 @@ footer h2 {
 }
 footer section.map{
     display: grid;
-    grid-template-columns: repeat(4, 20%);
+    grid-template-columns: repeat(4, 1fr);
     justify-items: center;
     justify-content: center;
 }
