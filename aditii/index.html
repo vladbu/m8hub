@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="./node_modules/@glidejs/glide/dist/css/glide.core.min.css">
+    <link rel="stylesheet" href="./node_modules/hamburgers/dist/hamburgers.css">
     <title>Aditii</title>
 </head>
 <body>
@@ -20,6 +21,11 @@
             <h3 class="total">300$</h3>
         </div>
         <nav>
+            <button class="hamburger hamburger--spin" type="button">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button> 
             <a href="#">home</a>
             <a href="#">sale</a>
             <a href="#">handbags</a>
@@ -90,7 +96,7 @@
             </div>
         </div>
     </section>
-    <section class="categories">
+    <section class="categories" data-parallax="scroll">
         <div class="glide__arrows" data-glide-el="controls">
             <button class="glide__arrow glide__arrow--left" data-glide-dir="<"></button>
         </div>
@@ -227,20 +233,7 @@
             Copyright &copy 2013 Css Author
         </section>
     </footer>
-    <!-- <script src="./src/index.js"></script> -->
     <script src="./node_modules/@glidejs/glide/dist/glide.js"></script>
-
-    <script>
-        new Glide('.banner', {
-            autoplay: 4000,
-            hoverpause: true,
-        }).mount();
-        new Glide('.categories', {
-            type: 'carousel',
-            perView: 3,
-            autoplay: 4000,
-            hoverpause: false
-        }).mount();
-    </script>
+    <script src="./src/index.js"></script>
 </body>
 </html>

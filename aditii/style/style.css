@@ -13,7 +13,7 @@
 body {
     background-color: #3dc6b4;
     color: white;
-    min-width: 940px;
+    /* min-width: 940px; */
 }
 a {
     text-decoration: none;
@@ -29,17 +29,18 @@ h2, h3, button, nav a{
 .glide__bullet[class*=active] {
     opacity: .5;
 }
+.show__nav {
+    display: flex;
+    flex-direction: column;
+}
 
 /* header */
 header {
     width: 100%;
     background-color: white;
-    display: grid;
-    grid-template-columns: .5fr 2fr .5fr;
     grid-column-gap: 1%;
 }
 header h1 {
-    margin: 5% 0;
     font-family: 'Lobster', cursive;
     color: #3cc3b5;
     justify-self: center;
@@ -87,7 +88,7 @@ header div.cart h3 {
     margin-left: 6%;
 }
 nav {
-    grid-column: 1/4;
+    
     background-color: #4ccfc1;
     box-shadow: 0px 2px 8px 0px rgba(0,0,0,.2);
     text-transform: uppercase;
@@ -114,8 +115,6 @@ section.banner {
     padding: 5%;
 }
 section.banner li.glide__slide {
-    display: grid;
-    grid-template-columns: repeat(2, 40%);
     justify-items: center;
     text-align: initial;
 }
@@ -220,9 +219,6 @@ div.products {
     background-color: white;
     color: #afafaf;
     text-transform: uppercase;
-    display: grid;
-    grid-template-columns: repeat(3, 20%);
-    grid-gap: 10%;
     justify-items: center;
     justify-content: center;
 }
@@ -275,4 +271,128 @@ footer section.copyright {
     padding: .5%;
     text-align: center;
     background-color: #2da89b;
+}
+
+/* desktop */
+@media screen and (min-width: 940px) {
+    /* header */
+    header {
+        display: grid;
+        grid-template-columns: .5fr 2fr .5fr;
+    }
+    header h1 {
+        margin: 5% 0;
+    }
+    nav {
+        grid-column: 1/4;
+    }
+    header nav button.hamburger {
+        display: none;
+    }
+
+    /* banner */
+    section.banner li.glide__slide {
+        display: grid;
+        grid-template-columns: repeat(2, 40%);
+    }
+
+    /* products */
+    section.products-container div.products {
+        height: 500px;
+        display: grid;
+        grid-template-columns: repeat(3, 20%);
+        grid-gap: 10%;
+    }
+
+    /* footer */
+    footer section.map {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* tablet */
+@media screen and (max-width: 940px) {
+    /* header */
+    header {
+        display: grid;
+        grid-template-rows: 1fr;
+        text-align: center;
+    }
+    header h1 {
+        width: 100%;
+    }
+    header form.search {
+        height: 5vw;
+    }
+    
+    header nav button.hamburger {
+        display: block;
+    }
+    header nav .hamburger-inner, 
+    header nav .hamburger-inner::after, 
+    header nav .hamburger-inner::before,
+    header nav .hamburger--spin.is-active .hamburger-inner,
+    header nav .hamburger--spin.is-active .hamburger-inner::after,
+    header nav .hamburger--spin.is-active .hamburger-inner::before {
+        background-color: white
+    }
+    nav a {
+        display: none;
+        font-size: 3.5em;
+    }
+    header nav a::after {
+        content: none;
+    }
+
+    /* banner */
+    section.banner li.glide__slide {
+        display: grid;
+        grid-template-columns: repeat(2, 40%);
+    }
+    /* categories */
+    section.categories button.glide__arrow {
+        display: none;
+    }
+
+    /* products */
+    section.products-container div.products {
+        height: 900px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10%;
+    }
+
+    /* footer */
+    footer section.map {
+        grid-template-columns: repeat(2, 1fr);
+        font-size: 1.7em;
+    }
+}
+
+/* mobile */
+@media screen and (max-width: 630px) {
+    /* banner  */
+    section.banner li.glide__slide {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    /* categories */
+    section.categories button.glide__arrow {
+        display: none;
+    }
+
+    /* products */
+    section.products-container div.products {
+        height: 1620px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 1%;
+    }
+
+    /* footer */
+    footer section.map {
+        grid-template-columns: 1fr;
+        font-size: 2em;
+    }
 }
