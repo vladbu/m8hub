@@ -1,29 +1,29 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400:600:800');
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
-@font-face{
+@font-face {
     font-family: BebasNeue;
-    src: url(../fonts/BebasNeue-Regular.otf)
+    src: url(../fonts/BebasNeue-Regular.otf);
+    margin-top: 100px;
 }
-
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 body {
     background-color: #3dc6b4;
     color: white;
     min-width: 940px;
 }
-a{
+a {
     text-decoration: none;
     color: white;
 }
-h2 {
+h2, h3, button, nav a{
+    font-family: BebasNeue;
     text-transform: uppercase;
 }
-.glide__bullet{
+.glide__bullet {
     border: none;
 }
 .glide__bullet[class*=active] {
@@ -55,11 +55,11 @@ header form.search {
 header form.search > * {
     height: 100%;
 }
-header form.search input[type=text]{
+header form.search input[type=text] {
     width: 95%;
     border: none
 }
-header form.search button{
+header form.search button {
     width: 5%;
     border: none;
     background: url(../img/search.png) center no-repeat;
@@ -80,9 +80,11 @@ header div.cart button {
     background-size: contain;
     cursor: pointer;
 }
-header div.cart h3{
+header div.cart h3 {
+    margin-top: 10%;
+    font-size: 2em;
     color: #afafaf;
-    margin-left:6%;
+    margin-left: 6%;
 }
 nav {
     grid-column: 1/4;
@@ -94,6 +96,8 @@ nav {
     text-align: center;
 }
 nav a {
+    font-size: 2em;
+    word-spacing: 10px;
     display: inline;
 }
 nav a::after {
@@ -102,6 +106,7 @@ nav a::after {
 nav a:last-of-type::after {
     content: none;
 }
+
 /* banner */
 section.banner {
     display: flex;
@@ -114,43 +119,101 @@ section.banner li.glide__slide {
     justify-items: center;
     text-align: initial;
 }
-section.banner li.glide__slide div{
+section.banner li.glide__slide div {
     padding: 0 10%;
 }
-section.banner li.glide__slide h2{
+section.banner li.glide__slide h2 {
     font-family: BebasNeue;
     text-transform: uppercase;
     font-size: 4em;
 }
-section.banner li.glide__slide p{
+section.banner li.glide__slide p {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     margin: 5% 0;
 }
-section.banner li.glide__slide button{
-    padding: 2%;
+section.banner li.glide__slide button {
+    padding: 2% 2% 1% 2%;
     background: none;
     border: .3vh solid white;
     border-radius: .7vh; 
     text-transform: uppercase;
     font-weight: 800;
+    font-size: 2em;
     color: white;
     cursor: pointer;
 }
-section.banner div.glide__bullets button.glide__bullet{
+section.banner div.glide__bullets {
+    margin-top: 5%;
+}
+section.banner div.glide__bullets button.glide__bullet {
     border-radius: 50%;
     width: 10px;
     height: 10px;
-
 }
+
 /* categories */
+section.categories {
+    background: white;
+    box-shadow: 0px 2px 8px 0px rgba(0,0,0,.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #afafaf;
+}
+
+section.categories li.glide__slide {
+    height: 150px;
+    padding: 1% 0;
+    border-right: 1px solid rgba(175, 175, 175, .3);
+    display: flex;
+}
+section.categories li.glide__slide img {
+    height: 100%;
+    margin: 0 0 0 10%;
+}
+section.categories li.glide__slide div {
+    width: 100px;
+    margin-left: 5%;
+}
+section.categories li.glide__slide h2 {
+    font-family: BebasNeue;
+    font-size: 2.5em;
+}
+section.categories li.glide__slide button {
+    font-size: 2em;
+    text-transform: uppercase;
+    color: white;
+    background-color: #3cc395;
+    border-radius: 5px;
+    border: solid 0px;
+    padding: 5% 10% 0% 10%;
+    cursor: pointer;
+}
+section.categories button.glide__arrow--left,
+section.categories button.glide__arrow--right {
+    height: 25vh;
+    width: 50px;
+    border: none;
+    cursor: pointer;
+}
+section.categories button.glide__arrow--left {
+    background: url(../img/arrow_left.png) center no-repeat;
+    background-size: contain;
+}
+section.categories button.glide__arrow--right {
+    background: url(../img/arrow_right.png) center no-repeat;
+    background-size: contain;
+}
 
 /* products */
 section.products-container {
     display: flex;
     flex-direction: column;
 }
-section.products-container h2{
+section.products-container h2 {
+    font-family: BebasNeue;
+    font-size: 2em;
     padding: 1% 5vw;
 }
 div.products {
@@ -170,22 +233,23 @@ div.products div.product {
     padding: 5%;
     border-bottom: solid #3cc395 5px;
     text-align: center;
+    font-size: 1.7em;
 }
-div.products div.product img{
+div.products div.product img {
     max-width: 100%;
 }
-div.products div.product div button{
+div.products div.product div button {
     font-size: 1em;
     text-transform: uppercase;
     color: white;
     background-color: #3cc395;
     border-radius: 5px;
     border: solid 0px;
-    margin-left: 5%;
-    padding: 1.5%;
+    margin: 0 0 -1% 5%;
+    padding: 3% 5% 0% 5%;
     cursor: pointer;
 }
-div.products div.product div > *{
+div.products div.product div > * {
     display: inline;
 }
 
@@ -197,7 +261,7 @@ footer h2 {
     text-transform: uppercase;
     margin: 5% 0;
 }
-footer section.map{
+footer section.map {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;
