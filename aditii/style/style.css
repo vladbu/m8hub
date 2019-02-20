@@ -311,7 +311,7 @@ footer section.copyright {
 }
 
 /* tablet */
-@media all and (max-width: 940px) {
+@media only screen and (max-width: 940px) {
     /* header */
     header {
         display: grid;
@@ -370,7 +370,7 @@ footer section.copyright {
 }
 
 /* mobile */
-@media all and (max-width: 630px) {
+@media only screen and (max-width: 630px) {
     /* banner  */
     section.banner li.glide__slide {
         display: grid;
