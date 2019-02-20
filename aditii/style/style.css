@@ -154,6 +154,7 @@ section.banner div.glide__bullets button.glide__bullet {
 
 /* categories */
 section.categories {
+    padding: 0 1%;
     background: white;
     box-shadow: 0px 2px 8px 0px rgba(0,0,0,.2);
     display: flex;
@@ -161,7 +162,6 @@ section.categories {
     align-items: center;
     color: #afafaf;
 }
-
 section.categories li.glide__slide {
     height: 150px;
     padding: 1% 0;
@@ -190,8 +190,7 @@ section.categories li.glide__slide button {
     padding: 5% 10% 0% 10%;
     cursor: pointer;
 }
-section.categories button.glide__arrow--left,
-section.categories button.glide__arrow--right {
+section.categories button.glide__arrow {
     height: 25vh;
     width: 50px;
     border: none;
