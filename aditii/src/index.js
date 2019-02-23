@@ -1,11 +1,11 @@
 // banner slider
-let banner = new Glide('.banner', {
+new Glide('.banner', {
     type: 'carousel',
     autoplay: 4000,
     hoverpause: true,
 }).mount();
 // categories slider
-let categories = new Glide('.categories', {
+new Glide('section.categories', {
     type: 'carousel',
     perView: 3,
     breakpoints: {
@@ -14,13 +14,13 @@ let categories = new Glide('.categories', {
         },
         686: {
             perView: 1
-        }
+        },
     },
     autoplay: 4000,
     hoverpause: false
 }).mount();
 
-// menu button for mobile
+// nav for mobile
 let hamburger = document.querySelector('.hamburger'),
     nav = document.querySelectorAll('nav a');
 
@@ -38,45 +38,56 @@ hamburger.addEventListener('click', () => {
     }
 });
 
-// products
-let products = new Vue({
-    el: '#products',
+new Vue({
+    el: '#vue-app',
     data: {
+        // products
         products: [
             {
                 title: 'branded shoe',
                 price: 300,
+                quantity: 5,
                 image: './img/product1.png'
             },
             {
                 title: 'branded tees',
-                price: 300,
+                price: 100,
+                quantity: 2,
                 image: './img/product2.png'
             },
             {
                 title: 'branded tees',
-                price: 300,
+                price: 120,
+                quantity: 6,
                 image: './img/product3.png'
             },
             {
                 title: 'branded wallet',
-                price: 300,
+                price: 420,
+                quantity: 0,
                 image: './img/product4.png'
             },
             {
                 title: 'ems woman bag',
-                price: 300,
+                price: 500,
+                quantity: 1,
                 image: './img/product5.png'
             },
             {
                 title: 'branded cargos',
-                price: 300,
+                price: 299,
+                quantity: 0,
                 image: './img/product6.png'
             },
 
-        ],    
+        ], 
+        // cart total
+        total: 0
     },
-    class: {
-        product: true
+    methods: {
+        // adding product price to cart
+        buy(price) {
+            this.total += price;
+        }
     }
 });

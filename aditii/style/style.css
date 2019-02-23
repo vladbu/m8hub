@@ -19,9 +19,16 @@ a {
     text-decoration: none;
     color: white;
 }
-h2, h3, button, nav a{
+h2, 
+h3, 
+button, 
+nav a{
     font-family: BebasNeue;
     text-transform: uppercase;
+}
+input, 
+button {
+    outline: none;
 }
 .glide__bullet {
     border: none;
@@ -243,6 +250,9 @@ div.products div.product div button {
     margin: 0 0 -1% 5%;
     padding: 3% 5% 0% 5%;
     cursor: pointer;
+}
+div.products div.product div button:disabled {
+    background-color: red
 }
 div.products div.product div > * {
     display: inline;
