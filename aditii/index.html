@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="./node_modules/@glidejs/glide/dist/css/glide.core.min.css">
     <link rel="stylesheet" href="./node_modules/hamburgers/dist/hamburgers.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.7/dist/vue.js"></script>
+    <script src="./node_modules/@glidejs/glide/dist/glide.js"></script>
     <title>Aditii</title>
 </head>
 <body>
@@ -131,8 +133,16 @@
     </section>
     <section class="products-container">
         <h2>Featured products</h2>
-        <div class="products">
-            <div class="product">
+        <div class="products" id="products">
+            <div v-for="product in products" class="product">
+                <img v-bind:src="product.image" alt="">
+                <h3>{{product.title}}</h3>
+                    <div>
+                        <h3>{{product.price}}</h3>
+                        <button>buy now</button>
+                    </div>
+            </div>
+            <!-- <div class="product">
                 <img src="./img/product1.png" alt="">
                 <h3>branded shoe</h3>
                     <div>
@@ -179,8 +189,8 @@
                     <h3>300$</h3>
                     <button>buy now</button>        
                 </div>
-            </div>
-            </div>
+            </div> -->
+        </div>
     </section>
     <footer>
         <section class="map">
@@ -233,7 +243,6 @@
             Copyright &copy 2013 Css Author
         </section>
     </footer>
-    <script src="./node_modules/@glidejs/glide/dist/glide.js"></script>
     <script src="./src/index.js"></script>
 </body>
 </html>
