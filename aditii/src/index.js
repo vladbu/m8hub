@@ -45,35 +45,38 @@ let products = new Vue({
         products: [
             {
                 title: 'branded shoe',
-                price: '$300',
+                price: 300,
                 image: './img/product1.png'
             },
             {
                 title: 'branded tees',
-                price: '$300',
+                price: 300,
                 image: './img/product2.png'
             },
             {
                 title: 'branded tees',
-                price: '$300',
+                price: 300,
                 image: './img/product3.png'
             },
             {
                 title: 'branded wallet',
-                price: '$300',
+                price: 300,
                 image: './img/product4.png'
             },
             {
                 title: 'ems woman bag',
-                price: '$300',
+                price: 300,
                 image: './img/product5.png'
             },
             {
                 title: 'branded cargos',
-                price: '$300',
+                price: 300,
                 image: './img/product6.png'
             },
 
         ],    
     },
+    class: {
+        product: true
+    }
 });

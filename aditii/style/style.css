@@ -298,9 +298,9 @@ footer section.copyright {
 
     /* products */
     section.products-container div.products {
-        height: 500px;
+        padding-bottom: 10%;    
         display: grid;
-        grid-template-columns: repeat(3, 20%);
+        grid-template-columns: repeat(3, 1fr);
         grid-gap: 10%;
     }
 
@@ -356,7 +356,7 @@ footer section.copyright {
 
     /* products */
     section.products-container div.products {
-        height: 900px;
+        padding-bottom: 25%;    
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 10%;
@@ -384,7 +384,7 @@ footer section.copyright {
 
     /* products */
     section.products-container div.products {
-        height: 1620px;
+        padding-bottom: 25%;    
         display: grid;
         grid-template-columns: 1fr;
         grid-gap: 1%;

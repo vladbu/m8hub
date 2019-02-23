@@ -135,10 +135,10 @@
         <h2>Featured products</h2>
         <div class="products" id="products">
             <div v-for="product in products" class="product">
-                <img v-bind:src="product.image" alt="">
+                <img :src="product.image" alt="">
                 <h3>{{product.title}}</h3>
                     <div>
-                        <h3>{{product.price}}</h3>
+                        <h3>${{product.price}}</h3>
                         <button>buy now</button>
                     </div>
             </div>
