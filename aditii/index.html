@@ -19,9 +19,9 @@
                 <input type="text" >
                 <button></button>
             </form>
-            <div class="cart">
+            <div class="cart" id="cart">
                 <button></button>
-                <h3 class="total">{{total}}$</h3>
+                <h3 class="total">{{ total }}$</h3>
             </div>
             <nav>
                 <button class="hamburger hamburger--spin" type="button">
@@ -134,12 +134,12 @@
         </section>
         <section class="products-container">
             <h2>Featured products</h2>
-            <div class="products">
+            <div class="products" id="products">
                 <div v-for="product in products" class="product">
                     <img :src="product.image" alt="">
-                    <h3>{{product.title}}</h3>
+                    <h3>{{ product.title }}</h3>
                         <div>
-                            <h3>${{product.price}}</h3>
+                            <h3>${{ product.price }}</h3>
                             <button v-if="product.quantity === 0" disabled>not awaible</button>
                             <button v-if="product.quantity > 0" v-on:click="buy(product.price)">buy now</button>
                         </div>

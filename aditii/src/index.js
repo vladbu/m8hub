@@ -38,10 +38,9 @@ hamburger.addEventListener('click', () => {
     }
 });
 
-new Vue({
-    el: '#vue-app',
+let products = new Vue ({
+    el: '#products',
     data: {
-        // products
         products: [
             {
                 title: 'branded shoe',
@@ -81,13 +80,18 @@ new Vue({
             },
 
         ], 
-        // cart total
-        total: 0
     },
     methods: {
         // adding product price to cart
         buy(price) {
-            this.total += price;
-        }
-    }
+            cart.total += price;
+        },
+    },
 });
+
+let cart = new Vue ({
+    el: '#cart',
+    data: {
+        total: 0,
+    },
+})
