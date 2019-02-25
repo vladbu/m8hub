@@ -1,11 +1,11 @@
 // banner slider
-new Glide('.banner', {
+const banner = new Glide('.banner', {
     type: 'carousel',
     autoplay: 4000,
     hoverpause: true,
 }).mount();
 // categories slider
-new Glide('section.categories', {
+const categories = new Glide('section.categories', {
     type: 'carousel',
     perView: 3,
     breakpoints: {
@@ -21,7 +21,7 @@ new Glide('section.categories', {
 }).mount();
 
 // nav for mobile
-let hamburger = document.querySelector('.hamburger'),
+const hamburger = document.querySelector('.hamburger'),
     nav = document.querySelectorAll('nav a');
 
 hamburger.addEventListener('click', () => {
@@ -38,7 +38,7 @@ hamburger.addEventListener('click', () => {
     }
 });
 
-let products = new Vue ({
+const products = new Vue ({
     el: '#products',
     data: {
         products: [
@@ -82,14 +82,13 @@ let products = new Vue ({
         ], 
     },
     methods: {
-        // adding product price to cart
-        buy(price) {
+        buy: (price) => {
             cart.total += price;
         },
     },
 });
 
-let cart = new Vue ({
+const cart = new Vue ({
     el: '#cart',
     data: {
         total: 0,

@@ -141,7 +141,7 @@
                         <div>
                             <h3>${{ product.price }}</h3>
                             <button v-if="product.quantity === 0" disabled>not awaible</button>
-                            <button v-if="product.quantity > 0" v-on:click="buy(product.price)">buy now</button>
+                            <button v-else v-on:click="buy(product.price)">buy now</button>
                         </div>
                 </div>
             </div>
