@@ -7,7 +7,7 @@
         </form>
         <div class="cart" id="cart">
             <button></button>
-            <h3 class="total"> {{ total }} $</h3>
+            <h3 class="total"> total $</h3>
         </div>
         <nav>
             <button class="hamburger hamburger--spin" type="button">

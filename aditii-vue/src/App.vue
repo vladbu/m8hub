@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <CHeader/>
-    <Banner/>
-    <Categories/>
-    <Products/>
-    <CFooter/>
+    <c-header/>
+    <banner/>
+    <categories/>
+    <products/>
+    <c-footer/>
   </div>
 </template>
 
@@ -16,7 +16,6 @@ import Products from './components/Products.vue'
 import CFooter from './components/CFooter.vue'
 
 export default {
-  
   components: {
     CHeader,
     Banner,

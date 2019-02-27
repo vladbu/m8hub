@@ -1,27 +1,68 @@
 <template>
     <section class="products-container">
         <h2>Featured products</h2>
-        <div class="products" id="products">
-            <div class="product">
-                <!-- <div v-for="product in products" class="product"> -->
-                <!-- <div class="product">
-                    <img :src="product.image" alt=""> -->
-                    <img src="../assets/img/product1.png" alt="">
-                    <h3>product.title</h3>
-                        <div>
-                            <h3>$ product.price </h3>
-                            <!-- <button v-if="product.quantity === 0" disabled>not awaible</button> -->
-                            <!-- <button v-else v-on:click="buy(product.price)">buy now</button> -->
-                            <button>buy now</button>
-                </div>
-            </div>
+        <div class="products">
+           <product-card v-for="product in products" :title="product.title" :price="product.price" :quantity="product.quantity" :image="product.image" :key="product.id"/>
         </div>
     </section>
 </template>
 
 <script>
+    import ProductCard from './ProductCard.vue'
+
     export default {
-        
+        components: {
+            ProductCard
+        },
+        data: function() {
+            return {
+                products: [
+                    {
+                        title: 'branded shoe',
+                        price: 300,
+                        quantity: 0,
+                        image: require('../assets/img/product1.png'),
+                        id: 1
+                    },
+                    {
+                        title: 'branded tees',
+                        price: 100,
+                        quantity: 2,
+                        image: require('../assets/img/product2.png'),
+                        id: 2
+                    },
+                    {
+                        title: 'branded tees',
+                        price: 120,
+                        quantity: 6,
+                        image: require('../assets/img/product3.png'),
+                        id: 3
+                    },
+                    {
+                        title: 'branded wallet',
+                        price: 420,
+                        quantity: 0,
+                        image: require('../assets/img/product4.png'),
+                        id: 4
+                    },
+                    {
+                        title: 'ems woman bag',
+                        price: 500,
+                        quantity: 1,
+                        image: require('../assets/img/product5.png'),
+                        id: 5
+                    },
+                    {
+                        title: 'branded cargos',
+                        price: 299,
+                        quantity: 0,
+                        image: require('../assets/img/product6.png'),
+                        id: 6
+                    },
+
+                ], 
+            }
+        },
     }
 </script>
 
@@ -42,34 +83,6 @@
         text-transform: uppercase;
         justify-items: center;
         justify-content: center;
-    }
-    div.products div.product {
-        box-shadow: 0px 0px 8px 0px rgba(0,0,0,.2);
-        width: 200px;
-        padding: 5%;
-        border-bottom: solid #3cc395 5px;
-        text-align: center;
-        font-size: 1.7em;
-    }
-    div.products div.product img {
-        max-width: 100%;
-    }
-    div.products div.product div button {
-        font-size: 1em;
-        text-transform: uppercase;
-        color: white;
-        background-color: #3cc395;
-        border-radius: 5px;
-        border: solid 0px;
-        margin: 0 0 -1% 5%;
-        padding: 3% 5% 0% 5%;
-        cursor: pointer;
-    }
-    div.products div.product div button:disabled {
-        background-color: red
-    }
-    div.products div.product div > * {
-        display: inline;
     }
 
     @media screen and (min-width: 940px) {
