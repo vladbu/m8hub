@@ -1,4 +1,4 @@
-Repository for some projects made during learning front-end.
+Repository for some projects made during learning frontend.
 ---
 №   | Name | Description | Repository link | Demo
 --- | ---  |      ---    |        ---      | ---
