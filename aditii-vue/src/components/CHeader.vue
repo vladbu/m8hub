@@ -15,16 +15,16 @@
                     <span class="hamburger-inner"></span>
                 </span>
             </button> 
-            <a href="#">home</a>
-            <a href="#">sale</a>
-            <a href="#">handbags</a>
-            <a href="#">wallets</a>
-            <a href="#">accessories</a>
-            <a href="#">mens store</a>
-            <a href="#">shoes</a>
-            <a href="#">vintage</a>
-            <a href="#">services</a>
-            <a href="#">contact us</a>
+            <router-link to="/"> home </router-link>
+            <router-link to="/category/sale"> sale </router-link>
+            <router-link to="/category/handbags"> handbags </router-link>
+            <router-link to="/category/wallets"> wallets </router-link>
+            <router-link to="/category/accessories"> accessories </router-link>
+            <router-link to="/category/mens store"> mens store </router-link>
+            <router-link to="/category/shoes"> shoes </router-link>
+            <router-link to="/category/vintage"> vintage </router-link>
+            <router-link to="/category/services"> services </router-link>
+            <router-link to="/category/contacts"> contact us </router-link>
         </nav>        
     </header>
 </template>

@@ -1,26 +1,18 @@
 <template>
   <div id="app">
     <c-header/>
-    <banner/>
-    <categories/>
-    <products/>
+    <router-view/>
     <c-footer/>
   </div>
 </template>
 
 <script>
 import CHeader from './components/CHeader.vue'
-import Banner from './components/Banner.vue'
-import Categories from './components/Categories.vue'
-import Products from './components/Products.vue'
 import CFooter from './components/CFooter.vue'
 
 export default {
   components: {
     CHeader,
-    Banner,
-    Categories,
-    Products,
     CFooter
   }
 }
@@ -32,7 +24,7 @@ export default {
   @import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
   @font-face {
     font-family: BebasNeue;
-    src: url(./assets/fonts/BebasNeue-Regular.otf);
+    src: url('./assets/fonts/BebasNeue-Regular.otf');
     margin-top: 100px;
   }
   * {
