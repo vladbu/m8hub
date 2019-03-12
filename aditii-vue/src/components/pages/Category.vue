@@ -1,33 +1,16 @@
 <template>
     <section class="category">
         <h3>{{ $route.params.categoryName }}</h3>
-        <product-card v-for="product in products" :title="product.title" :price="product.price" :quantity="product.quantity" :image="product.image" :key="product.id"/>
     </section>
 </template>
 
 <script>
-    import ProductCard from '../ProductCard.vue'
-
     export default {
-        components: {
-            ProductCard
-        },
         data: function () {
             return {
-                products: []
+                
             }
-        },
-        beforeCreate(){
-            fetch(`https://test-proj.free.beeceptor.com/${this.$route.params.categoryName}`)
-                .then((response) => {
-                    alert(response.status);
-                    alert(response.json());
-                    return response.json();
-                })
-                .then((products)=>{
-                    this.products = products
-                })
-        }
+        }   
     }
 </script>
 

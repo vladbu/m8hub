@@ -34,7 +34,7 @@ export default {
 </script>
 
 <style scoped>
-    div.products div.product {
+    div.product {
         box-shadow: 0px 0px 8px 0px rgba(0,0,0,.2);
         width: 200px;
         padding: 5%;
@@ -42,10 +42,10 @@ export default {
         text-align: center;
         font-size: 1.7em;
     }
-    div.products div.product img {
+    div.product img {
         max-width: 100%;
     }
-    div.products div.product div button {
+    div.product div button {
         font-size: 1em;
         text-transform: uppercase;
         color: white;
@@ -56,10 +56,10 @@ export default {
         padding: 3% 5% 0% 5%;
         cursor: pointer;
     }
-    div.products div.product div button:disabled {
+    div.product div button:disabled {
         background-color: red
     }
-    div.products div.product div > * {
+    div.product div > * {
         display: inline;
     }
 </style>
