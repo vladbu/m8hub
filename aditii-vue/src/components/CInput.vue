@@ -1,9 +1,13 @@
 <template>
-    <input type="text" :value="localVal">
+    <input type="text" v-model="localVal">
 </template>
 
 <script>
     export default {
+        model: {
+            prop: 'inputVal',
+            event: 'input'
+        },
         props: {
             inputVal: {
                 type: String,
@@ -15,7 +19,7 @@
                     return this.inputVal
                 },
                 set() {
-                    return this.$emit('input', this.localVal)
+                    return this.$emit('input', this.inputVal)
                 }
             }
         }     

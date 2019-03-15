@@ -1,6 +1,6 @@
 <template>
     <div class="center">
-        <input type="checkbox" v-model="innerVal">
+        <input type="checkbox" v-model="localVal">
     </div>
 </template>
 
@@ -17,7 +17,7 @@
            }
        },
        computed: {
-           innerVal: {
+           localVal: {
                 get(){
                     return this.toggleVal
                 },

@@ -2,7 +2,7 @@
     <section class="test">
         <c-input v-model="search"/>
         <ul>
-            <li v-for="company in companies" :key="companies[company]"></li>
+            <li v-for="company in companies" :key="companies[company]">{{ company }}</li>
         </ul>
         <c-toggle v-model="saved"/>
         <c-checkbox :firstCheck.sync="first" :secondCheck.sync="second"/>
@@ -22,7 +22,7 @@ export default {
     },
     data() {
         return {
-            search: '',
+            search: 'a',
             saved: false,
             first: false,
             second: true,
