@@ -8,3 +8,5 @@ Repository for some projects made during learning frontend.
 4   |Shopno|Markup project for Shopno template. Uses Google Maps JavaScript API.|[Repository](/shopno)|[Demo](https://vladbu.github.io/m8hub/shopno)
 5   |Magic 8 Ball|Made this just beacause I was bored. Fixed just on 08.02.2019|[Repository](/Magic%208%20ball)|[Demo](https://vladbu.github.io/m8hub/Magic%208%20ball)
 6   |Aditii|Markup project for Aditii template. Uses Glide.js and Hamburgers by Jonathan Suh.|[Repository](/aditii)|[Demo](https://vladbu.github.io/m8hub/aditii)
+7   |Aditii-vue|Markup project for Aditii template. Made with Vue.js|[Repository](/aditii-vue)|[Demo] build required
+8   |vuetify-todo|Simple todo list. Made with Vue.js and Vuetify|[Repository](/vuetify-todo)|[Demo] build required
