@@ -39,12 +39,15 @@
                         cycle
                         right
                         slider-color="green"
+                        v-model="taskList.tab"
                     >   
+                        <v-tab ripple :href="'#all'"> all </v-tab>
+                        <v-tab ripple :href="'#active'"> active </v-tab>
+                        <v-tab ripple :href="'#completed'"> completed </v-tab>
+                    </v-tabs>
+                    <v-tabs-items v-model="taskList.tab">
                         <!-- All -->
-                        <v-tab 
-                            ripple
-                        > all </v-tab>
-                        <v-tab-item>
+                        <v-tab-item :value="'all'">
                             <v-divider></v-divider>
                             <v-list>
                                 <template v-for="task in taskList.tasks">
@@ -77,8 +80,7 @@
                             </v-list>
                         </v-tab-item>
                         <!-- Active -->
-                        <v-tab ripple> active </v-tab>
-                        <v-tab-item>
+                        <v-tab-item :value="'active'">
                             <v-divider></v-divider>
                             <v-list>
                                 <template v-for="task in taskList.tasks">
@@ -110,8 +112,7 @@
                             </v-list>
                         </v-tab-item>
                         <!-- Completed -->
-                        <v-tab ripple> completed </v-tab>
-                        <v-tab-item>
+                        <v-tab-item :value="'completed'">
                             <v-divider></v-divider>
                             <v-list>
                                 <template v-for="task in taskList.tasks">
@@ -142,7 +143,7 @@
                                 </template>
                             </v-list>
                         </v-tab-item>
-                    </v-tabs>
+                    </v-tabs-items>
                     <v-divider></v-divider>
                 </v-card>
                 <v-btn 
@@ -165,6 +166,7 @@ export default {
                 newTask: '',
             },
             taskList: {
+                tab: 'all',
                 tasks: [],
             }
         }
