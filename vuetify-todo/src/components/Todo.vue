@@ -191,12 +191,13 @@ export default {
             this.saveToLocalStorage();
         },
         clearCompleted(){
-            this.taskList.tasks.forEach(task => {
+            this.taskList.tasks.slice(0).forEach(task => {
                 if (task.completed) {
                     this.taskList.tasks.splice(this.taskList.tasks.indexOf(task), 1);
+                    // this.clearCompleted();
                 }
-            })
-            // this.saveToLocalStorage();
+            });
+            this.saveToLocalStorage();
         }
     },
     created(){
