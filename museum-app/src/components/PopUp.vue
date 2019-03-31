@@ -51,7 +51,7 @@ export default {
           } else if (data.artObject.description !== null) {
             this.artObjDesc = data.artObject.description;
           } else {
-            this.artObjDesc = "No Description Avaible";
+            this.artObjDesc = "No description avaible for this art object.";
           }
         })
         // eslint-disable-next-line
