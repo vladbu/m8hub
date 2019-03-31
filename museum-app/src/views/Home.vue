@@ -4,9 +4,9 @@
       <toolbar
         :sortVal.sync="sortVal"
         :sortItems.sync="sortItems"
-        @sort="fetchData(`&s=${sortValComp}`)"
+        @sort="fetchData(sortValComp)"
         :searchVal.sync="searchVal"
-        @search="fetchData(`&q=${searchVal}`)"
+        @search="fetchData(searchValComp)"
       />
       <objects-grid class="mt-4" :response.sync="response"/>
       <pagination
@@ -14,6 +14,7 @@
         :currentPage.sync="currentPage"
         :length.sync="length"
         @update="fetchData(`&p=${currentPage}&ps=${perPageComp}${sortValComp}${searchValComp}${categoryComp}`)"
+        @showFav="fetchData(``)"
       />
     </v-layout>
   </v-container>
@@ -41,7 +42,7 @@ export default {
             return "&s=objecttype";
           case "Chronologic (Oldest First)":
             return "&s=chronologic";
-          case "Chronologic (Newes First)":
+          case "Chronologic (Newest First)":
             return "&s=achronologic";
           case "Artist (a-z)":
             return "&s=artist";
@@ -92,7 +93,7 @@ export default {
         "Relevance",
         "Type",
         "Chronologic (Oldest First)",
-        "Chronologic (Newes First)",
+        "Chronologic (Newest First)",
         "Artist (a-z)",
         "Artist (z-a)"
       ],

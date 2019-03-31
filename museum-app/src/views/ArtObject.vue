@@ -6,12 +6,12 @@
         <div>
           <span class="headline">{{ artObjLongTitle }}</span>
           <br>
-          <span class="body-2">Description:</span>
+          <span class="subheading">Description:</span>
           <p class="body-1">{{ artObjDesc }}</p>
-          <span class="body-2">Category:</span>
+          <span class="subheading">Category:</span>
           <template v-for="item in artObjCategory">
             <v-btn
-              v-if="item == 'category not avaible'"
+              v-if="item === 'this art object has no category'"
               flat
               round
               small
@@ -31,10 +31,10 @@
             >{{item}}</v-btn>
           </template>
           <br>
-          <span class="body-2">Tags:</span>
+          <span class="subheading">Tags:</span>
           <template v-for="item in artObjTags">
             <v-btn
-              v-if="item == 'tags not avaible'"
+              v-if="item === 'no tags avaible for this art object'"
               flat
               round
               small
@@ -54,11 +54,21 @@
             >#{{item}}</v-btn>
           </template>
           <br>
-          <span class="body-2">Additional info:</span>
+          <span class="subheading">Materials:</span>
+          <v-btn
+            small
+            flat
+            round
+            disabled
+            style="text-transform: capitalize"
+            color="primary"
+            v-for="item in artObjMaterials"
+            :key="item.$index"
+          >{{item}}</v-btn>
         </div>
       </v-card-title>
       <v-card-actions>
-        <v-btn light round>Share</v-btn>
+        <v-btn light round color="primary">Mark as favorite</v-btn>
         <v-btn light round to="/">Explore</v-btn>
       </v-card-actions>
     </v-card>
@@ -75,6 +85,7 @@ export default {
       artObjDesc: undefined,
       artObjCategory: undefined,
       artObjTags: undefined,
+      artObjMaterials: undefined,
       response: {}
     };
   },
@@ -98,12 +109,17 @@ export default {
           if (data.artObject.objectTypes.length !== 0) {
             this.artObjCategory = data.artObject.objectTypes;
           } else {
-            this.artObjCategory = ["category not avaible"];
+            this.artObjCategory = ["this art object has no category"];
           }
           if (data.artObjectPage.tags.length !== 0) {
             this.artObjTags = data.artObjectPage.tags;
           } else {
-            this.artObjTags = ["tags not avaible"];
+            this.artObjTags = ["no tags avaible for this art object"];
+          }
+          if (data.artObject.materials.length !== 0) {
+            this.artObjMaterials = data.artObject.materials;
+          } else {
+            this.artObjMaterials = ["unknown"];
           }
         })
         // eslint-disable-next-line

@@ -1,10 +1,10 @@
 <template>
   <v-container fluid grid-list-xl>
     <v-layout row wrap justify-space-around>
-      <v-flex md9>
+      <v-flex xs9>
         <v-pagination light :length="length" v-model="currentPageComp" @input="$emit('update')"/>
       </v-flex>
-      <v-flex md2>
+      <v-flex xs2>
         <v-btn-toggle mandatory light v-model="perPageComp" @change="$emit('update')">
           <v-btn>10</v-btn>
           <v-btn>50</v-btn>

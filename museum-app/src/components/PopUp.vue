@@ -2,10 +2,10 @@
   <v-card>
     <v-container grid-list-xl>
       <v-layout row wrap>
-        <v-flex md6>
+        <v-flex xs6>
           <v-img :src="image" pl-0/>
         </v-flex>
-        <v-flex md6>
+        <v-flex xs6>
           <div pr-0>
             <h3 class="headline mb-0">{{title}}</h3>
             <div>{{artObjDesc}}</div>
@@ -13,7 +13,7 @@
         </v-flex>
       </v-layout>
       <v-layout row wrap>
-        <v-btn light round color="primary">Add to fav list</v-btn>
+        <v-btn light round color="primary" @click="addToFav(artObjNum)">Mark as favorite</v-btn>
       </v-layout>
       <v-layout row wrap justify-space-between>
         <v-btn light round :to="`/artObject/${artObjNum}`">View more details</v-btn>
@@ -56,6 +56,9 @@ export default {
         })
         // eslint-disable-next-line
         .catch(err => console.error(err));
+    },
+    addToFav(artObjNum){
+      alert(artObjNum)
     }
   },
   created() {

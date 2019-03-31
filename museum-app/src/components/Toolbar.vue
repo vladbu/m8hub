@@ -19,15 +19,15 @@
         label="Search keyword..."
         append-icon="search"
         class="mt-2"
-        style="flex-basis: 70%"
+        style="flex-basis: 60%"
         v-model="searchValComp"
         @click:append="$emit('search')"
         @keydown.enter="$emit('search')"
       />
       <v-spacer/>
-      <v-btn flat icon light>
-        <v-icon>star</v-icon>
-      </v-btn>
+      <v-btn-toggle v-model="favorites">
+        <v-btn flat light @click="$emit('showFav')">Favorites</v-btn>
+      </v-btn-toggle>
     </v-toolbar>
   </v-card>
 </template>
@@ -42,10 +42,10 @@ export default {
   computed: {
     sortValComp: {
       get() {
-        return this.sortVal
+        return this.sortVal;
       },
       set(newVal) {
-        return this.$emit("update:sortVal", newVal)
+        return this.$emit("update:sortVal", newVal);
       }
     },
     searchValComp: {
@@ -56,6 +56,11 @@ export default {
         return this.$emit("update:searchVal", newVal);
       }
     }
+  },
+  data() {
+    return {
+      favorites: false
+    };
   }
 };
 </script>
