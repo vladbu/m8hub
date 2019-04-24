@@ -26,7 +26,7 @@ function img() {
     .pipe(dest('dist/img/'))
 }
 
-exports.default = function () {
+exports.watch = function () {
   watch('app/scss/*.scss', css)
   watch('app/*.pug', html)
   watch('app/js/*.js', js)
