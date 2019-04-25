@@ -5,18 +5,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>task 9</title>
+  <title>task 8</title>
 </head>
 
 <body>
   <script>
-    myObj = {
-      number: 5,
-      getDoubled(){
-        return this.number*2
-      },
-      
-    }
+    function getName(obj) {
+      return obj.name;
+    };
+    let user = {
+      name: 'Vasya',
+      n: function(){
+        return getName(this);
+      } 
+    };
   </script>
 </body>
 

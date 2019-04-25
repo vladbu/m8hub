@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>task 7</title>
+</head>
+
+<body>
+  <script>
+    function multiA(a) {
+      return function (b) {
+        return a * b;
+      };
+    };
+    function multi3(x) {
+      return function () { 
+        return 3 * x
+      };
+    };
+    function multi4(x) {
+      return function () { 
+        return 4 * x
+      };
+    };
+    console.log(multiA(5)(4));
+    console.log(multi3(2)());
+    console.log(multi4(6)());
+  </script>
+</body>
+
+</html>
