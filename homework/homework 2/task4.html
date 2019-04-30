@@ -11,14 +11,17 @@
 <body>
   <script>
     function City(name, population, country) {
+      let cityPopulation = population,
+        cityName = name,
+        cityCountry = country
       this.getPopulation = function () {
-        return population;
+        return cityPopulation;
       };
       this.getCityName = function () {
-        return name;
+        return cityCOuntry;
       };
       this.addCitizen = function () {
-        return ++population;
+        return ++cityPopulation;
       };
     }
 
