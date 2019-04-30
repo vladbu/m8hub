@@ -11,8 +11,9 @@
 <body>
   <script>
     function Machine(power) {
+      this._power = power;
       this.getPower = function(){
-        return power;
+        return this._power;
       };
     }
     function Car(power, color) {
