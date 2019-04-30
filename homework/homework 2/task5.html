@@ -22,7 +22,7 @@
     delete car.stop;
     console.log(car.stop); // null, свойсто stop хоть и удалено из car но в протоипе transport присутствует (2)
     delete transport.stop;
-    console.log(car.stop); // ? (3) 
+    console.log(car.stop); // undefined, так как stop удалено из  (3) 
   </script>
 </body>
 
