@@ -11,13 +11,15 @@
 <body>
   <script>
     function check(word) {
-      console.log(word)
-      console.log(word.split('').reverse().join(''))
-      if (word === word.split('').reverse().join('')) {
-        return true
-      } else {
-        return false
-      }
+      let reversed = word.split('').reverse().join('');
+      console.log(word);
+      console.log(reversed);
+      return word === reversed ? true : false;
+      // if (word === reversed) {
+      //   return true
+      // } else {
+      //   return false
+      // }
     }
     console.log(check('racecar'))
   </script>

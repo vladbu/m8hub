@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>task 5</title>
+</head>
+
+<body>
+  <script>
+    var transport = {
+      stop: null
+    };
+    var car = {
+      stop: true
+    };
+    car.__proto__ = transport;
+
+    console.log(car.stop); // true, свойство stop указано в car (1)
+    delete car.stop;
+    console.log(car.stop); // null, свойсто stop хоть и удалено из car но в протоипе transport присутствует (2)
+    delete transport.stop;
+    console.log(car.stop); // ? (3) 
+  </script>
+</body>
+
+</html>

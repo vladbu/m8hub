@@ -5,22 +5,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>task 4</title>
+  <title>task 8</title>
 </head>
 
 <body>
   <script>
-    function fib(n) {
-      let x = 1;
-      let y = 1;
-      for (let i = 0; i <= n; i++) {
-        let z = x + y
-        x = y
-        y = z
-      }
-      return y
+    function getName() {
+      return this.name;
     }
-    console.log(fib(5))
+    let user = {
+      name: 'Vasya',
+      n: function () {
+        return getName.call(this);
+      }
+    };
   </script>
 </body>
 

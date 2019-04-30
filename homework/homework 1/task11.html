@@ -5,19 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>task 2</title>
+  <title>task 11</title>
 </head>
 
 <body>
   <script>
-    function random(min, max) {
-      let num = Math.round(Math.random() * max);
-      if (num < min || num > max) {
-        return random(min, max);
-      } else {
-        return num;
-      };
-    };
+    function sum(arr) {
+      let arrSum = 0;
+      arr.forEach(el => {
+        arrSum += el;
+      })
+      return arrSum;
+    }
+    console.log(sum([1, 2, 10, 19, 3]));
   </script>
 </body>
 

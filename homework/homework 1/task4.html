@@ -5,19 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>task 6</title>
+  <title>task 4</title>
 </head>
 
 <body>
   <script>
-    let counter = 0
-    function count(n) {
-      for (; counter < n;) {
-        counter++
-        console.log(counter)
-        count(n)
+    function fib(n) {
+      if (n <= 1) {
+        return n;
+      } else {
+        return fib(n - 1) + fib(n - 2);
       }
     }
+    console.log(fib(32));
   </script>
 </body>
 

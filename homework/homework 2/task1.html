@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>task 1</title>
+</head>
+
+<body>
+  <script>
+    let car = {
+      maker: 'Mazda',
+      year: 2002,
+      mileage: 0,
+      color: 'Red',
+      fuel: 0,
+      refuel: function () {
+        this.fuel = parseInt(prompt('How many liters?'));
+      },
+      ignition: function () {
+        if (!this.fuel) {
+          console.error('Gas tank is empty.');
+        } else {
+          this.working = true;
+        }
+      },
+      move: function () {
+        if (!this.working) {
+          console.error('Turn the ignition key.');
+        } else {
+          console.info(`${this.color} ${this.maker} is moving.`);
+        }
+      },
+      stop: function () {
+        if (!this.working) {
+          console.info('Car is already stopped');
+        } else {
+          this.working = false;
+          console.info('Car stopped');
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

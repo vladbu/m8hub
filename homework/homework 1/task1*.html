@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>task 1</title>
+</head>
+
+<body>
+  <script>
+    let opening = prompt('Opening: ', 8),
+      closing = prompt('Closing: ', 18),
+      current = prompt('Current time: (0-24)', 12);
+    function time(x) {
+      if (x <= opening || x >= closing) {
+        return console.log('');
+      } else {
+        return console.info(`Pick another time, discount active from ${opening} to ${closing}`);
+      }
+    }
+    time(current)
+  </script>
+</body>
+
+</html>

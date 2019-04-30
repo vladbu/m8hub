@@ -5,19 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>task 11</title>
+  <title>task 2</title>
 </head>
 
 <body>
   <script>
-    function sum(arr) {
-      let arrSum = 0
-      arr.forEach(el => {
-        arrSum += el
-      });
-      return arrSum
+    function Car(color) {
+      this._color = color;
     }
-    console.log(sum([1, 2, 10, 19, 3]))
+    let redCar = new Car('red'),
+      greenCar = new Car('green');
   </script>
 </body>
 

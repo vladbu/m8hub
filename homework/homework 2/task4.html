@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>task 4</title>
+</head>
+
+<body>
+  <script>
+    function City(name, population, country) {
+      this.getPopulation = function () {
+        return population;
+      };
+      this.getCityName = function () {
+        return name;
+      };
+      this.addCitizen = function () {
+        return ++population;
+      };
+    }
+
+    let myCity = new City('Kyiv', 2887974, 'Ukraine');
+  </script>
+</body>
+
+</html>
