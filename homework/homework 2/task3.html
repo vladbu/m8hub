@@ -17,7 +17,7 @@
       };
     }
     function Car(power, color) {
-      Machine.apply(this, arguments);
+      Machine.apply(this, [power]);
       this._color = color;
     }
     let redCar = new Car('300hp', 'Red');
