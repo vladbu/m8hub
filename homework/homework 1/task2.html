@@ -10,13 +10,16 @@
 
 <body>
   <script>
+    // function random(min, max) {
+    //   let num = Math.round(Math.random() * max);
+    //   if (num < min || num > max) {
+    //     return random(min, max);
+    //   } else {
+    //     return num;
+    //   }
+    // }
     function random(min, max) {
-      let num = Math.round(Math.random() * max);
-      if (num < min || num > max) {
-        return random(min, max);
-      } else {
-        return num;
-      }
+      return Math.round(Math.random() * (max - min)) + min;
     }
   </script>
 </body>

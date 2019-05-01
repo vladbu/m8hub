@@ -14,10 +14,10 @@
       closing = prompt('Closing: ', 18),
       current = prompt('Current time: (0-24)', 12);
     function time(x) {
-      if (x <= opening || x >= closing) {
-        return console.log('');
+      if (x >= opening && x <= closing) {
+        return console.log('Discount is working');
       } else {
-        return console.info(`Pick another time, discount active from ${opening} to ${closing}`);
+        return console.info(`Pick another time, discount is active from ${opening} to ${closing}`);
       }
     }
     time(current)
