@@ -13,14 +13,14 @@
     function multiA(a) {
       return function (b) {
         return a * b;
-      };
-    };
+      }
+    }
     function multi3(x) {
       return multiA(3)(x);
-    };
+    }
     function multi4(x) {
       return multiA(4)(x);
-    };
+    }
     console.log(multiA(5)(4));
     console.log(multi3(2));
     console.log(multi4(6));
