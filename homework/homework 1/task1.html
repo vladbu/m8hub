@@ -15,19 +15,10 @@
       current = parseInt(prompt('Current time: (0-24)', 12));
     function time(x) {
       if (opening < closing) {
-        if (x >= opening && x <= closing) {
-          return console.info('Discount is working');
-        } else {
-          return console.info(`Pick another time, discount is active from ${opening} to ${closing}`);
-        }
+        return x >= opening && x <= closing ? console.info('Discount is working') : console.info(`Pick another time, discount is active from ${opening} to ${closing}`);
       } else {
-        if (x >= opening && 24 - x <= closing) {
-          return console.info('Discount is working');
-        } else {
-          return console.info(`Pick another time, discount is active from ${opening} to ${closing}`);
-        }
+        return x >= opening && 24 - x <= closing ? console.info('Discount is working') : console.info(`Pick another time, discount is active from ${opening} to ${closing}`);
       }
-
     }
     time(current);
   </script>
