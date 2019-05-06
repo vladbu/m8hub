@@ -16,7 +16,7 @@ h1 {
     "paypal"
     "buy";
   justify-content: center;
-  #card {
+  .card {
     display: grid;
     grid-area: card;
     grid-template:
@@ -99,55 +99,63 @@ h1 {
             background: url("../img/info.svg") no-repeat scroll center center;
           }
         }
-        .cvvInfo {
-          width: 360px;
-          margin: -125px -190px;
+        .cvvInfoContainer {
           position: absolute;
-          display: flex;
-          background: white;
-          -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
-          -moz-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
-          padding: 5px;
-          &::after,
-          &::before {
-            top: 100%;
-            left: 50%;
-            border: solid transparent;
-            content: " ";
-            height: 0;
-            width: 0;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          background-color: rgba(0, 0, 0, 0.2);
+          .cvvInfo {
+            width: 360px;
+            margin: 18% 25%;
             position: absolute;
-            pointer-events: none;
-          }
-          &::after {
-            border-color: rgba(255, 255, 255, 0);
-            border-top-color: #ffffff;
-            border-width: 13px;
-            margin-left: 138px;
-          }
-          &::before {
-            z-index: -1;
-            filter: blur(4px);
-            border-color: rgba(0, 0, 0, 0);
-            border-top-color: rgba(0, 0, 0, 0.2);
-            border-width: 16px;
-            margin-left: 136px;
-          }
-          div {
-            padding: 0px 5px;
             display: flex;
-            flex-direction: column;
-            img {
-              width: 80%;
-              align-self: center;
+            background: white;
+            -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+            -moz-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+            padding: 5px;
+            &::after,
+            &::before {
+              top: 100%;
+              left: 50%;
+              border: solid transparent;
+              content: " ";
+              height: 0;
+              width: 0;
+              position: absolute;
+              pointer-events: none;
             }
-            h4 {
-              margin-bottom: 0;
+            &::after {
+              border-color: rgba(255, 255, 255, 0);
+              border-top-color: #ffffff;
+              border-width: 13px;
+              margin-left: 138px;
             }
-          }
-          .borderRight {
-            border-right: 1px solid #dddddd;
+            &::before {
+              z-index: -1;
+              filter: blur(4px);
+              border-color: rgba(0, 0, 0, 0);
+              border-top-color: rgba(0, 0, 0, 0.2);
+              border-width: 16px;
+              margin-left: 136px;
+            }
+            div {
+              padding: 0px 5px;
+              display: flex;
+              flex-direction: column;
+              img {
+                width: 80%;
+                align-self: center;
+              }
+              h4 {
+                margin-bottom: 0;
+              }
+            }
+            .borderRight {
+              border-right: 1px solid #dddddd;
+            }
           }
         }
         .hidden {
@@ -200,7 +208,7 @@ h1 {
       ".. paypal paypal"
       ".. buy buy";
     grid-template-columns: 1fr 1fr 1fr;
-    #card {
+    .card {
       grid-template:
         "name name name"
         "number number type "
@@ -238,7 +246,7 @@ h1 {
           }
           .cvvInfo {
             width: 305px;
-            margin: -115px -138px;
+            margin: 250px -180px;
             &::before {
               margin-left: 120px;
             }
@@ -263,11 +271,11 @@ h1 {
       "card card card paypal"
       ".. buy buy paypal";
     grid-template-columns: repeat(4, 1fr);
-    #card {
+    .card {
       .expCvv {
         .cvv {
           .cvvInfo {
-            margin: -115px -100px;
+            // margin: -115px -100px;
             &::before {
               margin-left: 90px;
             }

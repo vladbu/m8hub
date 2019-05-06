@@ -1,10 +1,8 @@
-const showInfo = document.querySelector('.showInfo')
-const cvvInfo = document.querySelector('.cvvInfo')
-let infoActive = false;
+const showInfo = document.querySelector('.showInfo');
+const cvvInfo = document.querySelector('.cvvInfo');
+const cvvInfoContainer = document.querySelector('.cvvInfoContainer');
 
 showInfo.addEventListener('click', () => {
-  infoActive = !infoActive
-  if (infoActive === true) {
-    cvvInfo.classList.toggle('hidden')
-  }
+  cvvInfo.classList.toggle('hidden');
+  cvvInfoContainer.classList.toggle('hidden');
 })

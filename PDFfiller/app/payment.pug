@@ -1,13 +1,14 @@
 doctype html  
 html(lang="en")  
   head
+    meta(charset="UTF-8")
     meta(name="viewport" content="width=480, initial-scale=1.0")
     link(rel="stylesheet" href="./css/payment.css")
     title PDFfiller
   body
     h1 Thank you for choosing to subscribe to PDFfiller services!
     .container
-      form(method="post")#card
+      form(method="post")#card.card
         .type
           input(type="radio" name="type" id="visa" required)
           label(for="visa").Visa-dark
@@ -39,15 +40,16 @@ html(lang="en")
             .input
               input(type="text" name="cvv" placeholder="XXXX" required)
               button.showInfo(form="")
-              div.cvvInfo.hidden
-                div.borderRight
-                  img(src="./img/visaMaster.svg" alt="")
-                  h4 Visa, MasterCard
-                  p 3-Digit Verification Number
-                div
-                  img(src="./img/amExpr.svg" alt="")
-                  h4 American Express
-                  p 4-Digit Verification Number
+              div.cvvInfoContainer.hidden
+                div.cvvInfo.hidden
+                  div.borderRight
+                    img(src="./img/visaMaster.svg" alt="")
+                    h4 Visa, MasterCard
+                    p 3-Digit Verification Number
+                  div
+                    img(src="./img/amExpr.svg" alt="")
+                    h4 American Express
+                    p 4-Digit Verification Number
         .zip
           p Zip/Postal Code
           input(type="text" name="zip" placeholder="01001" required)
