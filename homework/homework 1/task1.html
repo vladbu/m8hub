@@ -25,7 +25,7 @@
           current.setDate(current.getDate() + 1);
         }
         closing.setDate(opening.getDate() + 1);
-        return (current >= opening && current <= closing ) ? console.info('Discount is working') : console.info(`Pick another time, discount is active from ${opening.getHours()} to ${closing.getHours()}`);
+        return (current >= opening && current <= closing) ? console.info('Discount is working') : console.info(`Pick another time, discount is active from ${opening.getHours()} to ${closing.getHours()}`);
       }
     }
     time();
