@@ -10,20 +10,40 @@
 
 <body>
   <script>
-    function Machine(power) {
-      this._power = power;
-      this.getPower = function () {
-        return this._power;
-      };
-    }
-    function Car(power, color) {
-      Machine.apply(this, [power]);
+    function Car(color, maker, year, mileage, fuel) {
       this._color = color;
-      this.getColor = function () {
-        return this._color;
+      this._maker = maker;
+      this._year = year;
+      this._mileage = mileage;
+      this._fuel = fuel;
+    }
+    Car.prototype.refuel = function () {
+      this._fuel = parseInt(prompt('How many liters?'));
+    };
+    Car.prototype.ignition = function () {
+      if (!this._fuel) {
+        console.error('Gas tank is empty.');
+      } else {
+        this._working = true;
+      }
+    };
+    Car.prototype.move = function () {
+      if (!this._working) {
+        console.error('Turn the ignition key.');
+      } else {
+        console.info(`${this._color} ${this._maker} is moving.`);
+      }
+    };
+    Car.prototype.stop = function () {
+      if (!this._working) {
+        console.info('Car is already stopped');
+      } else {
+        this._working = false;
+        console.info('Car stopped');
       }
     }
-    let redCar = new Car('300hp', 'Red');
+
+    let redCar = new Car('Red', 'Mazda', '2002', 0, 0);
   </script>
 </body>
 
