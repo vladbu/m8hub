@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>task 6</title>
+  <style>
+    td {
+      border: 1px dotted aqua;
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <tr>
+      <td>
+      </td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+
+  <script>
+    const cellImg = [
+      '<img src="./img/1.png">',
+      '<img src="./img/2.png">',
+      '<img src="./img/3.png">',
+      '<img src="./img/4.png">'
+    ];
+    const td = document.getElementsByTagName('td');
+
+    window.onload = function () {
+      for (let i = 0; i < td.length; i++) {
+        td[i].innerHTML = cellImg[Math.floor(Math.random() * cellImg.length)];
+        td[i].addEventListener('mouseover', highlight);
+      }
+      td.indexOf = [].indexOf
+    };
+    function highlight(ev){
+      console.log(td.indexOf(ev));
+    }
+  </script>
+</body>
+
+</html>

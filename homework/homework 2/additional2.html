@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>additional 2</title>
+</head>
+
+<body>
+  <form id="login">
+    <h2>Login</h2>
+    <input type="text" name="name" placeholder="name">
+    <input type="password" name="pass" placeholder="password">
+    <input type="submit" name="submit">
+  </form>
+  <form id="register">
+    <h2>Register</h2>
+    <input type="text" name="name" placeholder="name" required>
+    <input type="password" name="pass" placeholder="password" required>
+    <input type="password" name="confPass" placeholder="confirm password" required>
+    <input type="checkbox" value="admin" name="admin">
+    <label for="admin">admin</label>
+    <input type="submit" name="submit">
+  </form>
+
+  <script>
+    let registeredUsers = [];
+    window.onload = function () {
+      if (!window.localStorage.getItem('registeredUsers')) {
+        registeredUsers = JSON.parse(window.localStorage.getItem('registeredUsers'));
+      } else {
+        return;
+      }
+    };
+    const login = document.getElementById('login');
+    const register = document.getElementById('register');
+
+    function saveToLocalStorage(obj) {
+      window.localStorage.setItem('registeredUsers', JSON.stringify(obj));
+    }
+    function saveToSessionStorage(obj) {
+      window.sessionStorage.setItem('currentUser', JSON.stringify(obj));
+    }
+
+    function User(name) {
+      this._userName = name;
+    }
+    User.prototype.changeName = function (newName) {
+      this._userName = newName;
+    };
+
+    function Visitor(name) { }
+    Visitor.prototype = Object.create(User.prototype);
+    Visitor.prototype.constructor = Visitor;
+
+    function Admin(name) { }
+    Admin.prototype = Object.create(User.prototype);
+    Admin.prototype.constructor = Admin;
+
+    // Registration
+    register.submit.addEventListener('click', function (event) {
+      if (register.pass.value !== register.confPass.value) {
+        event.preventDefault();
+        alert('Passwords mismatch');
+      } else {
+        const user = {};
+        user.name = register.name.value;
+        user.role = register.admin.checked ? 'admin' : 'visitor';
+        user.password = register.pass.value;
+        registeredUsers.push(user);
+        saveToLocalStorage(registeredUsers);
+      }
+    });
+
+    // Login
+    login.submit.addEventListener('click', function (event) {
+
+    });
+  </script>
+</body>
+
+</html>

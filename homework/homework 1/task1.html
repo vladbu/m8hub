@@ -10,15 +10,24 @@
 
 <body>
   <script>
-    let opening = prompt('Opening: ', 8),
-      closing = prompt('Closing: ', 18),
-      current = prompt('Current time: (0-24)', 12);
+    let opening = parseInt(prompt('Opening: ', 8)),
+      closing = parseInt(prompt('Closing: ', 18)),
+      current = parseInt(prompt('Current time: (0-24)', 12));
     function time(x) {
-      if (x >= opening && x <= closing) {
-        return console.log('Discount is working');
+      if (opening < closing) {
+        if (x >= opening && x <= closing) {
+          return console.info('Discount is working');
+        } else {
+          return console.info(`Pick another time, discount is active from ${opening} to ${closing}`);
+        }
       } else {
-        return console.info(`Pick another time, discount is active from ${opening} to ${closing}`);
+        if (x >= opening && 24 - x <= closing) {
+          return console.info('Discount is working');
+        } else {
+          return console.info(`Pick another time, discount is active from ${opening} to ${closing}`);
+        }
       }
+
     }
     time(current);
   </script>

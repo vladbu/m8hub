@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>task 2</title>
+  <style>
+    td {
+      border: 1px solid salmon
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <tr>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+    </tr>
+    <tr>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+    </tr>
+    <tr>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+    </tr>
+    <tr>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+    </tr>
+    <tr>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+    </tr>
+    <tr>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+    </tr>
+    <tr>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+    </tr>
+    <tr>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+    </tr>
+    <tr>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+    </tr>
+    <tr>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+      <td>text</td>
+    </tr>
+  </table>
+  <button style="color:red">Don't click me</button>
+  <script>
+    const td = document.getElementsByTagName('td');
+    const button = document.getElementsByTagName('button')[0];
+    button.addEventListener('click', function () {
+      for (let i = 0; i < td.length; i += 11) {
+        td[i].style.backgroundColor = 'red';
+      }
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>task 4</title>
+  <style>
+    body * {
+      border: 1px dotted royalblue;
+      background-color: aquamarine;
+    }
+  </style>
+</head>
+
+<body>
+  <div onclick="addChildrenTo(this, 4, 'li')">
+    text
+  </div>
+
+  <script>
+    function addChildrenTo(block, count, type) {
+      for (let i = 0; i < count; i++) {
+        let el = document.createElement(type);
+        el.innerHTML = 'sometext';
+        block.appendChild(el);
+      }
+    }
+  </script>
+</body>
+
+</html>

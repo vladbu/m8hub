@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>additional 1</title>
+</head>
+
+<body>
+  <script>
+    // Form constructor and methods
+    function Form() { }
+    Form.prototype.appendForm = function () {
+      this._form = document.createElement('form');
+      document.body.appendChild(this._form);
+    };
+    Form.prototype.appendHeader = function () {
+      this._header = document.createElement('h1');
+      this._form.appendChild(this._header);
+      this._header.innerHTML = this._heading;
+    };
+    Form.prototype.appendLogin = function () {
+      this._login = document.createElement('input');
+      this._login.setAttribute('type', 'text');
+      this._login.setAttribute('placeholder', 'Login');
+      this._form.appendChild(this._login);
+    };
+    Form.prototype.appendPass = function () {
+      this._password = document.createElement('input');
+      this._password.setAttribute('type', 'password');
+      this._password.setAttribute('placeholder', 'Password');
+      this._form.appendChild(this._password);
+    };
+    Form.prototype.appendSubmit = function () {
+      this._submit = document.createElement('input');
+      this._submit.setAttribute('type', 'submit');
+      this._form.appendChild(this._submit);
+    };
+
+    // SignIn constructor and methods
+    function SignIn() {
+      this._heading = 'Sign In';
+    }
+    SignIn.prototype = Object.create(Form.prototype);
+    SignIn.prototype.constructor = SignIn;
+    SignIn.prototype.createForm = function () {
+      this.appendForm();
+      this.appendHeader();
+      this.appendLogin();
+      this.appendPass();
+      this.appendSubmit();
+    };
+
+    // SignUp constructor and methods
+    function SignUp(heading) {
+      this._heading = 'Sign Up';
+    }
+    SignUp.prototype = Object.create(Form.prototype);
+    SignUp.prototype.constructor = SignUp;
+    SignUp.prototype.appendEmail = function () {
+      this._email = document.createElement('input');
+      this._email.setAttribute('type', 'email');
+      this._email.setAttribute('placeholder', 'Email');
+      this._form.appendChild(this._email);
+    };
+    SignUp.prototype.appendConfirmPass = function () {
+      this._confirmPass = document.createElement('input');
+      this._confirmPass.setAttribute('type', 'password');
+      this._confirmPass.setAttribute('placeholder', 'Confirm Password');
+      this._form.appendChild(this._confirmPass);
+    };
+    SignUp.prototype.createForm = function () {
+      this.appendForm();
+      this.appendHeader();
+      this.appendLogin();
+      this.appendEmail();
+      this.appendPass();
+      this.appendConfirmPass();
+      this.appendSubmit();
+    };
+
+    const form = new SignUp();
+    // const form = new SignIn();
+    console.log(form);
+    form.createForm();
+  </script>
+</body>
+
+</html>
