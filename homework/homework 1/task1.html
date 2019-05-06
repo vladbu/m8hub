@@ -10,17 +10,25 @@
 
 <body>
   <script>
-    let opening = parseInt(prompt('Opening: ', 8)),
-      closing = parseInt(prompt('Closing: ', 18)),
-      current = parseInt(prompt('Current time: (0-24)', 12));
-    function time(x) {
+    function time() {
+      let opening = new Date(),
+        closing = new Date(),
+        current = new Date();
+      opening.setHours(parseInt(prompt('Opening: ', 8)));
+      closing.setHours(parseInt(prompt('Closing: ', 18)));
+      current.setHours(parseInt(prompt('Current hours: (0-24)', 12)));
+
       if (opening < closing) {
-        return x >= opening && x <= closing ? console.info('Discount is working') : console.info(`Pick another time, discount is active from ${opening} to ${closing}`);
+        return (current >= opening && current <= closing) ? console.info('Discount is working') : console.info(`Pick another time, discount is active from ${opening.getHours()} to ${closing.getHours()}`);
       } else {
-        return x >= opening && 24 - x <= closing ? console.info('Discount is working') : console.info(`Pick another time, discount is active from ${opening} to ${closing}`);
+        if (current.getHours() < opening.getHours()){
+          current.setDate(current.getDate() + 1);
+        }
+        closing.setDate(opening.getDate() + 1);
+        return (current >= opening && current <= closing ) ? console.info('Discount is working') : console.info(`Pick another time, discount is active from ${opening.getHours()} to ${closing.getHours()}`);
       }
     }
-    time(current);
+    time();
   </script>
 </body>
 

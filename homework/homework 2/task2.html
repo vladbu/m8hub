@@ -10,11 +10,39 @@
 
 <body>
   <script>
-    function Car(color) {
+    function Car(color, maker, year, mileage, fuel) {
       this._color = color;
+      this._maker = maker;
+      this._year = year;
+      this._mileage = mileage;
+      this._fuel = fuel;
+      this.refuel = function () {
+        this._fuel = parseInt(prompt('How many liters?'));
+      };
+      this.ignition = function () {
+        if (!this._fuel) {
+          console.error('Gas tank is empty.');
+        } else {
+          this._working = true;
+        }
+      };
+      this.move = function () {
+        if (!this._working) {
+          console.error('Turn the ignition key.');
+        } else {
+          console.info(`${this._color} ${this._maker} is moving.`);
+        }
+      };
+      this.stop = function () {
+        if (!this._working) {
+          console.info('Car is already stopped');
+        } else {
+          this._working = false;
+          console.info('Car stopped');
+        }
+      }
     }
-    let redCar = new Car('red'),
-      greenCar = new Car('green');
+    let redCar = new Car('Red', 'Mazda', '2002', 0, 0);
   </script>
 </body>
 
