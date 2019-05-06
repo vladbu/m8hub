@@ -21,7 +21,7 @@
       if (opening < closing) {
         return (current >= opening && current <= closing) ? console.info('Discount is working') : console.info(`Pick another time, discount is active from ${opening.getHours()} to ${closing.getHours()}`);
       } else {
-        if (current < opening){
+        if (current < opening) {
           current.setDate(current.getDate() + 1);
         }
         closing.setDate(opening.getDate() + 1);
