@@ -16,16 +16,24 @@
         current = new Date();
       opening.setHours(parseInt(prompt('Opening: ', 8)));
       closing.setHours(parseInt(prompt('Closing: ', 18)));
-      current.setHours(parseInt(prompt('Current hours: (0-24)', 12)));
+      current.setHours(parseInt(prompt('Current time:', 12)));
 
       if (opening < closing) {
-        return (current >= opening && current <= closing) ? console.info('Discount is working') : console.info(`Pick another time, discount is active from ${opening.getHours()} to ${closing.getHours()}`);
+        if (current >= opening && current <= closing) {
+          return console.info('Discount is working');
+        } else {
+          return console.info(`Pick another time, discount is active from ${opening.getHours()} to ${closing.getHours()}`);
+        }
       } else {
         if (current < opening) {
           current.setDate(current.getDate() + 1);
         }
         closing.setDate(opening.getDate() + 1);
-        return (current >= opening && current <= closing) ? console.info('Discount is working') : console.info(`Pick another time, discount is active from ${opening.getHours()} to ${closing.getHours()}`);
+        if (current >= opening && current <= closing) {
+          return console.info('Discount is working');
+        } else {
+          return console.info(`Pick another time, discount is active from ${opening.getHours()} to ${closing.getHours()}`);
+        }
       }
     }
     time();
