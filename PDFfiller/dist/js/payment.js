@@ -4,10 +4,14 @@ const showInfo = document.querySelector('.showInfo');
 const cvvInfo = document.querySelector('.cvvInfo');
 const cvvInfoContainer = document.querySelector('.cvvInfoContainer');
 const form = document.getElementById('card');
+let card = {};
 
 showInfo.addEventListener('click', () => {
   cvvInfo.classList.toggle('hidden');
   cvvInfoContainer.classList.toggle('hidden');
+});
+cvvInfo.addEventListener('click', (el) => {
+  el.stopPropagation()
 });
 cvvInfoContainer.addEventListener('click', () => {
   cvvInfo.classList.toggle('hidden');
@@ -16,16 +20,17 @@ cvvInfoContainer.addEventListener('click', () => {
 
 form.addEventListener('submit', (el) => {
   el.preventDefault();
-  console.log(validator.number('4111'))
-  console.info(`
-    ${form.type.value}
-    ${form.firstName.value}
-    ${form.lastName.value}
-    ${form.cardNumber.value}
-    ${form.month.value}
-    ${form.year.value}
-    ${form.cvv.value}
-    ${form.zip.value}`);
+  card.type = form.type.value;
+  card.firstName = form.firstName.value;
+  card.lastName = form.lastName.value;
+  card.number = form.cardNumber.value;
+  card.date = `${form.month.value}${form.year.value}`;
+  card.cvv = form.cvv.value;
+  card.zip = form.zip.value;
+  console.log(validator.number(card.number));
+  console.log(validator.expirationDate(card.date));
+  console.log(validator.cvv(card.cvv));
+  console.log(validator.postalCode(card.zip));
 });
 },{"card-validator":2}],2:[function(require,module,exports){
 'use strict';

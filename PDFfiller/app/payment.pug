@@ -12,11 +12,11 @@ html(lang="en")
         .type
           input(type="radio" name="type" id="visa" value="visa" required)
           label(for="visa").Visa-dark
-          input(type="radio" name="type" id="masterCard" value="masterCard"  required)
+          input(type="radio" name="type" id="masterCard" value="mastercard"  required)
           label(for="masterCard").MasterCard-dark
           input(type="radio" name="type" id="discover" value="discover"  required)
           label(for="discover").Discover-dark
-          input(type="radio" name="type" id="americanExpr" value="americanExpr"  required)
+          input(type="radio" name="type" id="americanExpr" value="american-express"  required)
           label(for="americanExpr").AmericanExpress-dark
         .name
           p Cardholder Name
@@ -30,11 +30,14 @@ html(lang="en")
             p Exp. Date
             div 
               select(name="month" required)
-                each month, index in ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"]
-                  option(value=index)= month
+                each month in ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"]
+                  option(value=month)= month
               select(name="year" required)
-                each year in ["2019", "2020", "2021"]
+                - var currentDate = new Date
+                - var  year = currentDate.getFullYear()
+                while year <= year + 19
                   option(value=year)= year
+                  - year++
           .cvv
             p CVV/CVC
             .input

@@ -49,6 +49,10 @@ h1 {
       display: flex;
       align-items: center;
       justify-content: space-evenly;
+      input {
+        z-index: -1;
+        margin-right: -73px;
+      }
       @each $card in AmericanExpress-dark, Discover-dark, MasterCard-dark, Visa-dark {
         .#{$card} {
           cursor: pointer;
@@ -56,9 +60,14 @@ h1 {
           height: 30px;
           width: 40.055px;
           background-image: url("../img/#{$card}.svg");
-          background-size: contain;
+          background-size: cover;
           background-repeat: no-repeat;
           background-position: center;
+        }
+        input:checked + label {
+          border: rgba(253, 118, 34, 0.7) 2px solid;
+          border-radius: 3px;
+          margin: -2px;
         }
       }
     }
