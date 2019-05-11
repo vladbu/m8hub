@@ -10,13 +10,13 @@ html(lang="en")
     .container
       form(method="post")#card.card
         .type
-          input(type="radio" name="type" id="visa" required)
+          input(type="radio" name="type" id="visa" value="visa" required)
           label(for="visa").Visa-dark
-          input(type="radio" name="type" id="masterCard" required)
+          input(type="radio" name="type" id="masterCard" value="masterCard"  required)
           label(for="masterCard").MasterCard-dark
-          input(type="radio" name="type" id="discover" required)
+          input(type="radio" name="type" id="discover" value="discover"  required)
           label(for="discover").Discover-dark
-          input(type="radio" name="type" id="americanExpr" required)
+          input(type="radio" name="type" id="americanExpr" value="americanExpr"  required)
           label(for="americanExpr").AmericanExpress-dark
         .name
           p Cardholder Name
@@ -24,7 +24,7 @@ html(lang="en")
           input(type="text" name="lastName" placeholder="Last Name" required)
         .number
           p Card Number
-          input(type="text" name="cardNumber" placeholder="⦁⦁⦁⦁⦁ ⦁⦁⦁⦁⦁ ⦁⦁⦁⦁⦁ ⦁⦁⦁⦁⦁" pattern="[0-9]{16}" required)
+          input(type="text" name="cardNumber" placeholder="⦁⦁⦁⦁⦁ ⦁⦁⦁⦁⦁ ⦁⦁⦁⦁⦁ ⦁⦁⦁⦁⦁" required)
         .expCvv
           .expDate
             p Exp. Date
