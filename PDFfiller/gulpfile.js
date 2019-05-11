@@ -2,6 +2,7 @@ const { src, dest, watch } = require('gulp');
 const sass = require('gulp-sass');
 const pug = require('gulp-pug');
 const cleanCSS = require('gulp-clean-css');
+const browserify = require('gulp-browserify');
 
 function css() {
   return src('app/scss/*.scss')
@@ -18,6 +19,7 @@ function html() {
 
 function js() {
   return src('app/js/*.js')
+    .pipe(browserify())
     .pipe(dest('dist/js/'))
 }
 

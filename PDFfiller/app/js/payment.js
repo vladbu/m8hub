@@ -1,4 +1,4 @@
-import validator from 'card-validator';
+const validator = require('card-validator');
 const showInfo = document.querySelector('.showInfo');
 const cvvInfo = document.querySelector('.cvvInfo');
 const cvvInfoContainer = document.querySelector('.cvvInfoContainer');
@@ -15,7 +15,7 @@ cvvInfoContainer.addEventListener('click', () => {
 
 form.addEventListener('submit', (el) => {
   el.preventDefault();
-  console.log(valid.number('4111'))
+  console.log(validator.number('4111'))
   console.info(`
     ${form.type.value}
     ${form.firstName.value}
