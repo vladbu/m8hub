@@ -32,7 +32,7 @@ form.addEventListener('submit', (el) => {
 function numValidation(el) {
   card.number = form.cardNumber.value;
   card.type = form.type.value;
-  if (validator.number(card.number).isValid === false || validator.number(card.number).card.type !== card.type) {
+  if (!validator.number(card.number).isValid || validator.number(card.number).card.type !== card.type) {
     console.log(validator.number(card.number));
     form.cardNumber.setCustomValidity('Invalid credit card number or card type');
     el.preventDefault();
@@ -46,7 +46,7 @@ form.cardNumber.addEventListener('blur', numValidation);
 // date validation
 function dateValidation(el) {
   card.date = `${form.month.value}${form.year.value}`;
-  if (validator.expirationDate(card.date).isValid === false) {
+  if (!validator.expirationDate(card.date).isValid) {
     console.log(validator.expirationDate(card.date));
     form.month.setCustomValidity('Invalid expiration date');
     el.preventDefault();
@@ -61,7 +61,7 @@ form.year.addEventListener('blur', dateValidation);
 // cvv validation
 function cvvValidation(el) {
   card.cvv = form.cvv.value;
-  if (validator.cvv(card.cvv).isValid === false) {
+  if (!validator.cvv(card.cvv).isValid) {
     console.log(validator.cvv(card.cvv));
     form.cvv.setCustomValidity('Invalid cvv code');
     el.preventDefault();
@@ -75,7 +75,7 @@ form.cvv.addEventListener('blur', cvvValidation);
 // zip/postal validation
 function zipValidation(el) {
   card.zip = form.zip.value;
-  if (validator.postalCode(card.zip).isValid === false) {
+  if (!validator.postalCode(card.zip).isValid) {
     console.log(validator.postalCode(card.zip));
     form.zip.setCustomValidity('Invalid zip/postal code');
     el.preventDefault();
