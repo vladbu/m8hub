@@ -23,10 +23,10 @@ cvvInfoContainer.addEventListener('click', () => {
 form.addEventListener('submit', (el) => {
   card.firstName = form.firstName.value;
   card.lastName = form.lastName.value;
-  numValidation(form.cardNumber);
-  dateValidation(form.month);
-  cvvValidation(form.cvv);
-  zipValidation(form.zip);
+  numValidation(el);
+  dateValidation(el);
+  cvvValidation(el);
+  zipValidation(el);
   if (validator.number(card.number).isValid && validator.expirationDate(card.date).isValid && validator.cvv(card.cvv).isValid && validator.postalCode(card.zip).isValid) {
     console.log(validator.number(card.number));
     console.log(validator.expirationDate(card.date));
@@ -48,9 +48,10 @@ function numValidation(el) {
   card.type = form.type.value;
   if (validator.number(card.number).isValid === false || validator.number(card.number).card.type !== card.type) {
     console.log(validator.number(card.number));
-    el.target.setCustomValidity('Invalid credit card number or card type');
+    form.cardNumber.setCustomValidity('Invalid credit card number or card type');
+    el.preventDefault();
   } else {
-    el.target.setCustomValidity('');
+    form.cardNumber.setCustomValidity('');
     return
   }
 }
@@ -61,9 +62,10 @@ function dateValidation(el) {
   card.date = `${form.month.value}${form.year.value}`;
   if (validator.expirationDate(card.date).isValid === false) {
     console.log(validator.expirationDate(card.date));
-    el.target.setCustomValidity('Invalid experiation date');
+    form.month.setCustomValidity('Invalid experiation date');
+    el.preventDefault();
   } else {
-    el.target.setCustomValidity('');
+    form.month.setCustomValidity('');
     return
   }
 }
@@ -75,9 +77,10 @@ function cvvValidation(el) {
   card.cvv = form.cvv.value;
   if (validator.cvv(card.cvv).isValid === false) {
     console.log(validator.cvv(card.cvv));
-    el.target.setCustomValidity('Invalid cvv code');
+    form.cvv.setCustomValidity('Invalid cvv code');
+    el.preventDefault();
   } else {
-    el.target.setCustomValidity('');
+    form.cvv.setCustomValidity('');
     return
   }
 }
@@ -88,9 +91,10 @@ function zipValidation(el) {
   card.zip = form.zip.value;
   if (validator.postalCode(card.zip).isValid === false) {
     console.log(validator.postalCode(card.zip));
-    el.target.setCustomValidity('Invalid zip/postal code');
+    form.zip.setCustomValidity('Invalid zip/postal code');
+    el.preventDefault();
   } else {
-    el.target.setCustomValidity('');
+    form.zip.setCustomValidity('');
     return
   }
 }
