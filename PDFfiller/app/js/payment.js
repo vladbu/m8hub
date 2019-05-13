@@ -22,6 +22,10 @@ cvvInfoContainer.addEventListener('click', () => {
 form.addEventListener('submit', (el) => {
   card.firstName = form.firstName.value;
   card.lastName = form.lastName.value;
+  numValidation(form.cardNumber);
+  dateValidation(form.month);
+  cvvValidation(form.cvv);
+  zipValidation(form.zip);
   if (validator.number(card.number).isValid && validator.expirationDate(card.date).isValid && validator.cvv(card.cvv).isValid && validator.postalCode(card.zip).isValid) {
     console.log(validator.number(card.number));
     console.log(validator.expirationDate(card.date));
@@ -79,7 +83,7 @@ function cvvValidation(el) {
 form.cvv.addEventListener('blur', cvvValidation);
 
 // zip/postal validation
-function postalValidation(el) {
+function zipValidation(el) {
   card.zip = form.zip.value;
   if (validator.postalCode(card.zip).isValid === false) {
     console.log(validator.postalCode(card.zip));
@@ -89,4 +93,4 @@ function postalValidation(el) {
     return
   }
 }
-form.zip.addEventListener('blur', postalValidation);
+form.zip.addEventListener('blur', zipValidation);
