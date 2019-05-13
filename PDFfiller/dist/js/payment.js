@@ -27,19 +27,6 @@ form.addEventListener('submit', (el) => {
   dateValidation(el);
   cvvValidation(el);
   zipValidation(el);
-  if (validator.number(card.number).isValid && validator.expirationDate(card.date).isValid && validator.cvv(card.cvv).isValid && validator.postalCode(card.zip).isValid) {
-    console.log(validator.number(card.number));
-    console.log(validator.expirationDate(card.date));
-    console.log(validator.cvv(card.cvv));
-    console.log(validator.postalCode(card.zip));
-    return
-  } else {
-    el.preventDefault();
-    console.log(validator.number(card.number));
-    console.log(validator.expirationDate(card.date));
-    console.log(validator.cvv(card.cvv));
-    console.log(validator.postalCode(card.zip));
-  }
 });
 
 // cardNumber validation
@@ -62,7 +49,7 @@ function dateValidation(el) {
   card.date = `${form.month.value}${form.year.value}`;
   if (validator.expirationDate(card.date).isValid === false) {
     console.log(validator.expirationDate(card.date));
-    form.month.setCustomValidity('Invalid experiation date');
+    form.month.setCustomValidity('Invalid expiration date');
     el.preventDefault();
   } else {
     form.month.setCustomValidity('');
