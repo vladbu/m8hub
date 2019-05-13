@@ -114,10 +114,11 @@ h1 {
           left: 0;
           width: 100vw;
           height: 100vh;
-          background-color: rgba(0, 0, 0, 0.2);
+          // background-color: rgba(0, 0, 0, 0.2);
           .cvvInfo {
             width: 360px;
-            margin: 18% 25%;
+            top: 140px;
+            right: 19vw;
             position: absolute;
             display: flex;
             background: white;
@@ -140,7 +141,7 @@ h1 {
               border-color: rgba(255, 255, 255, 0);
               border-top-color: #ffffff;
               border-width: 13px;
-              margin-left: 138px;
+              margin-left: 2px;
             }
             &::before {
               z-index: -1;
@@ -148,7 +149,7 @@ h1 {
               border-color: rgba(0, 0, 0, 0);
               border-top-color: rgba(0, 0, 0, 0.2);
               border-width: 16px;
-              margin-left: 136px;
+              margin-left: -2px;
             }
             div {
               padding: 0px 5px;
@@ -254,13 +255,14 @@ h1 {
             grid-column: 2/3;
           }
           .cvvInfo {
-            width: 305px;
-            margin: 250px -180px;
+            width: 305px !important;
+            top: 5px !important;
+            right: 5px !important;
             &::before {
-              margin-left: 120px;
+              margin-left: 120px !important;
             }
             &::after {
-              margin-left: 122px;
+              margin-left: 122px !important;
             }
           }
         }
@@ -284,7 +286,8 @@ h1 {
       .expCvv {
         .cvv {
           .cvvInfo {
-            // margin: -115px -100px;
+            top: 1px !important;
+            right: 25vw !important;
             &::before {
               margin-left: 90px;
             }
