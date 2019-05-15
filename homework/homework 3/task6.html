@@ -9,6 +9,11 @@
   <style>
     td {
       border: 1px dotted aqua;
+      width: 100px;
+      height: 100px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
     }
   </style>
 </head>
@@ -55,22 +60,62 @@
 
   <script>
     const cellImg = [
-      '<img src="./img/1.png">',
-      '<img src="./img/2.png">',
-      '<img src="./img/3.png">',
-      '<img src="./img/4.png">'
+      './img/1.png',
+      './img/2.png',
+      './img/3.png',
+      './img/4.png'
     ];
+    const tr = document.getElementsByTagName('tr');
     const td = document.getElementsByTagName('td');
 
     window.onload = function () {
       for (let i = 0; i < td.length; i++) {
-        td[i].innerHTML = cellImg[Math.floor(Math.random() * cellImg.length)];
+        td[i].style.backgroundImage = `url(${cellImg[Math.floor(Math.random() * cellImg.length)]})`;
         td[i].addEventListener('mouseover', highlight);
+        td[i].addEventListener('mouseout', removeHighlight);
       }
-      td.indexOf = [].indexOf
     };
-    function highlight(ev){
-      console.log(td.indexOf(ev));
+    function removeHighlight() {
+      for (let i = 0; i < td.length; i++) {
+        td[i].style.backgroundColor = '';
+      }
+    }
+    function highlight(el) {
+      el.target.style.backgroundColor = 'aqua';
+      for (let i = 0; i < tr.length; i++) {
+        let tdLocal = tr[i].getElementsByTagName('td');
+        tdLocal.indexOf = [].indexOf;
+        for (let j = 0; j < tdLocal.length; j++) {
+          if (tdLocal.indexOf(el.target) >= 0) {
+            let index = tdLocal.indexOf(el.target);
+            if (!!tdLocal[index + 1] && tdLocal[index + 1].style.backgroundImage === el.target.style.backgroundImage) {
+              tdLocal[index + 1].style.backgroundColor = 'aqua';
+            }
+            if (!!tdLocal[index - 1] && tdLocal[index - 1].style.backgroundImage === el.target.style.backgroundImage) {
+              tdLocal[index - 1].style.backgroundColor = 'aqua';
+            }
+            if (!!tr[i + 1] && !!tr[i + 1].getElementsByTagName('td')[index + 1] && tr[i + 1].getElementsByTagName('td')[index + 1].style.backgroundImage === el.target.style.backgroundImage) {
+              tr[i + 1].getElementsByTagName('td')[index + 1].style.backgroundColor = 'aqua';
+            }
+            if (!!tr[i + 1] && !!tr[i + 1].getElementsByTagName('td')[index] && tr[i + 1].getElementsByTagName('td')[index].style.backgroundImage === el.target.style.backgroundImage) {
+              tr[i + 1].getElementsByTagName('td')[index].style.backgroundColor = 'aqua';
+            }
+            if (!!tr[i + 1] && !!tr[i + 1].getElementsByTagName('td')[index - 1] && tr[i + 1].getElementsByTagName('td')[index - 1].style.backgroundImage === el.target.style.backgroundImage) {
+              tr[i + 1].getElementsByTagName('td')[index - 1].style.backgroundColor = 'aqua';
+            }
+            if (!!tr[i - 1] && !!tr[i - 1].getElementsByTagName('td')[index + 1] && tr[i - 1].getElementsByTagName('td')[index + 1].style.backgroundImage === el.target.style.backgroundImage) {
+              tr[i - 1].getElementsByTagName('td')[index + 1].style.backgroundColor = 'aqua';
+            }
+            if (!!tr[i - 1] && !!tr[i - 1].getElementsByTagName('td')[index] && tr[i - 1].getElementsByTagName('td')[index].style.backgroundImage === el.target.style.backgroundImage) {
+              tr[i - 1].getElementsByTagName('td')[index].style.backgroundColor = 'aqua';
+            }
+            if (!!tr[i - 1] && !!tr[i - 1].getElementsByTagName('td')[index - 1] && tr[i - 1].getElementsByTagName('td')[index - 1].style.backgroundImage === el.target.style.backgroundImage) {
+              tr[i - 1].getElementsByTagName('td')[index - 1].style.backgroundColor = 'aqua';
+            }
+
+          }
+        }
+      }
     }
   </script>
 </body>
