@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>task 3</title>
+	<style>
+		td {
+			border: 1px dotted palevioletred;
+		}
+	</style>
+</head>
+
+<body>
+	<table>
+		<tr>
+			<td id="id">Visitor ID</td>
+			<td id="createdAt">Registration date</td>
+			<td id="name">Name</td>
+			<td id="email"> Email</td>
+			<td id="description">Description</td>
+		</tr>
+	</table>
+	<button onclick="loadMore()">load more</button>
+	<script>
+		const table = document.getElementsByTagName('table');
+		let response = [];
+		let page = 1;
+
+		function pushResponse() {
+			for (let i = 0; i < response.length; i++) {
+				let tr = document.createElement('tr');
+				tr.innerHTML = `
+					<td>${response[i].id}</td>
+					<td>${response[i].createdAt}</td>
+					<td>${response[i].name}</td>
+					<td>${response[i].email}</td>
+					<td>${response[i].description}</td>`;
+				table[0].appendChild(tr);
+			}
+		}
+		function loadMore() {
+			const xhr = new XMLHttpRequest();
+			xhr.open('GET', `https://tanuhaua.github.io/datas-file-json/dynamic-loading/${page}/users.json`, true);
+			xhr.send();
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState === 4) {
+					if (xhr.status === 200) {
+						response = JSON.parse(xhr.responseText);
+						if (!response.loadMore) {
+							document.getElementsByTagName('button')[0].remove();
+						}
+						response = response.data;
+						for (let i = 0; i < response.length; i++) {
+							response[i].createdAt = new Date(response[i].createdAt);
+						}
+						pushResponse();
+					} else {
+						throw new Error(xhr.status);
+					}
+				} else {
+					return;
+				}
+			}
+			page++
+		}
+	</script>
+</body>
+
+</html>

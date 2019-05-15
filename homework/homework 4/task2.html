@@ -35,13 +35,13 @@
 
     function pushResponse() {
       for (let i = 0; i < response.length; i++) {
-        const tr = document.createElement('tr');
+        let tr = document.createElement('tr');
         tr.innerHTML = `
-              <td>${response[i].id}</td>
-              <td>${response[i].createdAt}</td>
-              <td>${response[i].name}</td>
-              <td>${response[i].email}</td>
-              <td>${response[i].description}</td>`;
+          <td>${response[i].id}</td>
+          <td>${response[i].createdAt}</td>
+          <td>${response[i].name}</td>
+          <td>${response[i].email}</td>
+          <td>${response[i].description}</td>`;
         table[0].appendChild(tr);
       }
     }
