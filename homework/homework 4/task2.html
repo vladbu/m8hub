@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>task 2</title>
+  <style>
+    td {
+      border: 1px dotted palevioletred;
+    }
+  </style>
+</head>
+
+<body>
+  <button onclick="getData()">get</button>
+  <table>
+    <tr>
+      <td onclick="sort(this)" id="id">Visitor ID</td>
+      <td onclick="sort(this)" id="createdAt">Registration date</td>
+      <td onclick="sort(this)" id="name">Name</td>
+      <td onclick="sort(this)" id="email">Email</td>
+      <td onclick="sort(this)" id="description">Description</td>
+    </tr>
+  </table>
+
+  <script>
+    const table = document.getElementsByTagName('table');
+    let response = [];
+
+    function pushResponse() {
+      for (let i = 0; i < response.length; i++) {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+              <td>${response[i].id}</td>
+              <td>${response[i].createdAt}</td>
+              <td>${response[i].name}</td>
+              <td>${response[i].email}</td>
+              <td>${response[i].description}</td>`;
+        table[0].appendChild(tr);
+      }
+    }
+
+    function getData() {
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', 'https://tanuhaua.github.io/datas-file-json/visitors.json', true);
+      xhr.send();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            response = JSON.parse(xhr.responseText);
+            pushResponse();
+          } else {
+            throw new Error(xhr.status);
+          }
+        } else {
+          return;
+        }
+      }
+    }
+    function sort(el) {
+      const tr = document.getElementsByTagName('tr');
+      switch (el.id) {
+        case 'id':
+          response.sort((a, b) => (a.id > b.id) ? 1 : -1);
+          console.log(tr.length);
+          // придумать как сортировать
+          pushResponse();
+          break;
+        case 'createdAt':
+
+          break;
+        case 'name':
+
+          break;
+        case 'email':
+
+          break;
+        case 'description':
+
+          break;
+      }
+    }
+  </script>
+</body>
+
+</html>
