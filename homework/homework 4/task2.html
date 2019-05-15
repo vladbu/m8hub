@@ -17,16 +17,20 @@
   <button onclick="getData()">get</button>
   <table>
     <tr>
-      <td onclick="sort(this)" id="id">Visitor ID</td>
-      <td onclick="sort(this)" id="createdAt">Registration date</td>
-      <td onclick="sort(this)" id="name">Name</td>
-      <td onclick="sort(this)" id="email">Email</td>
-      <td onclick="sort(this)" id="description">Description</td>
+      <td id="id"><button onclick="sortAsc('id')">↑</button> Visitor ID <button onclick="sortDesc('id')">↓</button></td>
+      <td id="createdAt"><button onclick="sortAsc('createdAt')">↑</button> Registration date <button
+          onclick="sortDesc('createdAt')">↓</button></td>
+      <td id="name"><button onclick="sortAsc('name')">↑</button> Name <button onclick="sortDesc('name')">↓</button></td>
+      <td id="email"><button onclick="sortAsc('email')">↑</button> Email <button onclick="sortDesc('email')">↓</button>
+      </td>
+      <td id="description"><button onclick="sortAsc('description')">↑</button> Description <button
+          onclick="sortDesc('description')">↓</button></td>
     </tr>
   </table>
 
   <script>
     const table = document.getElementsByTagName('table');
+    const tr = document.getElementsByTagName('tr');
     let response = [];
 
     function pushResponse() {
@@ -50,7 +54,10 @@
         if (xhr.readyState === 4) {
           if (xhr.status === 200) {
             response = JSON.parse(xhr.responseText);
-            pushResponse();
+            for (let i = 0; i < response.length; i++) {
+              response[i].createdAt = new Date(response[i].createdAt);
+            }
+            sortDesc("id")
           } else {
             throw new Error(xhr.status);
           }
@@ -59,28 +66,30 @@
         }
       }
     }
-    function sort(el) {
-      const tr = document.getElementsByTagName('tr');
-      switch (el.id) {
-        case 'id':
-          response.sort((a, b) => (a.id > b.id) ? 1 : -1);
-          console.log(tr.length);
-          // придумать как сортировать
-          pushResponse();
-          break;
-        case 'createdAt':
 
-          break;
-        case 'name':
-
-          break;
-        case 'email':
-
-          break;
-        case 'description':
-
-          break;
+    function sortAsc(el) {
+      while (tr.length !== 1) {
+        tr[1].remove();
       }
+      if (el === 'id' || el === 'createdAt') {
+        response = response.sort((a, b) => (a[el] > b[el]) ? -1 : 1);
+      } else {
+        response = response.sort((a, b) => (a[el].toLowerCase() > b[el].toLowerCase()) ? -1 : 1);
+      }
+      pushResponse();
+      return
+    }
+    function sortDesc(el) {
+      while (tr.length !== 1) {
+        tr[1].remove();
+      }
+      if (el === 'id' || el === 'createdAt') {
+        response = response.sort((a, b) => (a[el] > b[el]) ? 1 : -1);
+      } else {
+        response = response.sort((a, b) => (a[el].toLowerCase() > b[el].toLowerCase()) ? 1 : -1);
+      }
+      pushResponse();
+      return
     }
   </script>
 </body>
