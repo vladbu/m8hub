@@ -82,7 +82,7 @@
         }
       }
       pushRandomColorsArr(0);
-      for (let i = 0; i < el.innerHTML.length; i++) {
+      for (let i = 0; i < textArr.length; i++) {
         textArr[i] = `<span style="color:${randomColors[i]}">${textArr[i]}</span>`;
       }
       el.innerHTML = textArr.join('');

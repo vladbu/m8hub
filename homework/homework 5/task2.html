@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>task 2</title>
+</head>
+
+<body>
+  <script>
+    function request(url) {
+      return new Promise((resolved, rejected) => {
+        const xhr = new XMLHttpRequest ();
+        xhr.open('GET', url, true);
+        xhr.onload = function () {
+          if (this.status === 200) {
+            resolved(this.response);
+          } else {
+            rejected(new Error(this.status));
+          }
+        };
+        xhr.onerror = function () {
+          rejected(new Error('something went wrong'));
+        };
+        xhr.send();
+      });
+    }
+
+    request('https://tanuhaua.github.io/datas-file-json/data.json')
+      .then( response => {
+        console.log(JSON.parse(response));
+      });
+  </script>
+</body>
+
+</html>

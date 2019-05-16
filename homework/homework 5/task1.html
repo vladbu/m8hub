@@ -13,7 +13,7 @@
   <script>
     function getData() {
       const xhr = new XMLHttpRequest();
-      xhr.open('GET', 'https://tanuhaua.github.io/datas-file-json/data.json');
+      xhr.open('GET', 'https://www.facebook.com/ajax/bz');
       xhr.send();
       xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
@@ -25,6 +25,14 @@
         }
       }
     }
+    // 1 access-control-allow-origin: * 
+    // политика CORS разрешает localhost загружать данные с сервера
+
+    // 2 политика CORS запрещает localhost загружать данные из facebook.com
+    // отсутствует заголовок Access-Control-Allow-Origin
+    
+    // 3 политика CORS разрешает только https://www.facebook.com загружать данные из facebook.com
+    // access-control-allow-origin: https://www.facebook.com
   </script>
 </body>
 

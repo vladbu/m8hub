@@ -15,14 +15,17 @@
       background-position: center;
       background-size: contain;
     }
+
+    .highlighted {
+      background-color: aqua;
+    }
   </style>
 </head>
 
 <body>
   <table>
     <tr>
-      <td>
-      </td>
+      <td></td>
       <td></td>
       <td></td>
       <td></td>
@@ -77,43 +80,15 @@
     };
     function removeHighlight() {
       for (let i = 0; i < td.length; i++) {
-        td[i].style.backgroundColor = '';
+        td[i].classList.remove('highlighted')
       }
     }
     function highlight(el) {
-      el.target.style.backgroundColor = 'aqua';
+      el.target.classList.add('highlighted');
       for (let i = 0; i < tr.length; i++) {
-        let tdLocal = tr[i].getElementsByTagName('td');
-        tdLocal.indexOf = [].indexOf;
+        let tdLocal = tr[i].document.getElementsByTagName('td');
         for (let j = 0; j < tdLocal.length; j++) {
-          if (tdLocal.indexOf(el.target) >= 0) {
-            let index = tdLocal.indexOf(el.target);
-            if (!!tdLocal[index + 1] && tdLocal[index + 1].style.backgroundImage === el.target.style.backgroundImage) {
-              tdLocal[index + 1].style.backgroundColor = 'aqua';
-            }
-            if (!!tdLocal[index - 1] && tdLocal[index - 1].style.backgroundImage === el.target.style.backgroundImage) {
-              tdLocal[index - 1].style.backgroundColor = 'aqua';
-            }
-            if (!!tr[i + 1] && !!tr[i + 1].getElementsByTagName('td')[index + 1] && tr[i + 1].getElementsByTagName('td')[index + 1].style.backgroundImage === el.target.style.backgroundImage) {
-              tr[i + 1].getElementsByTagName('td')[index + 1].style.backgroundColor = 'aqua';
-            }
-            if (!!tr[i + 1] && !!tr[i + 1].getElementsByTagName('td')[index] && tr[i + 1].getElementsByTagName('td')[index].style.backgroundImage === el.target.style.backgroundImage) {
-              tr[i + 1].getElementsByTagName('td')[index].style.backgroundColor = 'aqua';
-            }
-            if (!!tr[i + 1] && !!tr[i + 1].getElementsByTagName('td')[index - 1] && tr[i + 1].getElementsByTagName('td')[index - 1].style.backgroundImage === el.target.style.backgroundImage) {
-              tr[i + 1].getElementsByTagName('td')[index - 1].style.backgroundColor = 'aqua';
-            }
-            if (!!tr[i - 1] && !!tr[i - 1].getElementsByTagName('td')[index + 1] && tr[i - 1].getElementsByTagName('td')[index + 1].style.backgroundImage === el.target.style.backgroundImage) {
-              tr[i - 1].getElementsByTagName('td')[index + 1].style.backgroundColor = 'aqua';
-            }
-            if (!!tr[i - 1] && !!tr[i - 1].getElementsByTagName('td')[index] && tr[i - 1].getElementsByTagName('td')[index].style.backgroundImage === el.target.style.backgroundImage) {
-              tr[i - 1].getElementsByTagName('td')[index].style.backgroundColor = 'aqua';
-            }
-            if (!!tr[i - 1] && !!tr[i - 1].getElementsByTagName('td')[index - 1] && tr[i - 1].getElementsByTagName('td')[index - 1].style.backgroundImage === el.target.style.backgroundImage) {
-              tr[i - 1].getElementsByTagName('td')[index - 1].style.backgroundColor = 'aqua';
-            }
-
-          }
+          
         }
       }
     }
