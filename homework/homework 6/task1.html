@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>task 1</title>
+  <style>
+    .clearfix::after {
+      content: none;
+      display: block;
+      clear: both;
+    }
+
+    div {
+      border: 1px solid black;
+    }
+
+    .logo {
+      width: 100px;
+      height: 100px;
+      float: left;
+    }
+
+    .menu {
+      height: 100px;
+    }
+
+    .news {
+      border-top: 0;
+      float: left;
+      width: 100px;
+      height: 300px;
+    }
+
+    .list {
+      border-top: 0;
+      border-right: 0;
+      height: 300px;
+      width: calc(100% - 100px);
+    }
+
+    .navigation {
+      border-top: 0;
+      height: 450px;
+      margin-block-start: -300px;
+      float: right;
+    }
+
+    .footer {
+      border-top: 0;
+      border-right: 0;
+      height: 150px;
+      width: 78%;
+    }
+  </style>
+</head>
+
+<body class="clearfix">
+  <div class="logo">logo</div>
+  <div class="menu">menu</div>
+  <div class="news">news</div>
+  <div class="list">list of some things</div>
+  <div class="navigation">navigatiion bar</div>
+  <div class="footer">footer</div>
+
+</body>
+
+</html>
