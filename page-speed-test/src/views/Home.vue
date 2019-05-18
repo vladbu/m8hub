@@ -56,14 +56,8 @@ export default {
         .then(response => response.json())
         .then(data => {
           this.response = data;
-        })
-        .then(() => {
           this.audits = this.response.lighthouseResult.audits;
-        })
-        .then(() => {
           this.categories = this.response.lighthouseResult.categories.performance.auditRefs;
-        })
-        .then(() => {
           this.categories.forEach(el => {
             for (let key in this.audits) {
               if (
