@@ -51,7 +51,7 @@ export default {
     },
     fetchData() {
       fetch(
-        "https://www.googleapis.com/pagespeedonline/v5/runPagespeed/?url=https://semalt.com/"
+        "https://www.googleapis.com/pagespeedonline/v5/runPagespeed/?url=https://habr.com/"
       )
         .then(response => response.json())
         .then(data => {
