@@ -76,18 +76,38 @@
               </v-flex>
               <v-flex xs6 text-xs-right>
                 <span
-                  v-if="obj.score <= .5 && obj.score !== null"
+                  v-if="obj.score <= .5 && obj.score !== null && obj.displayValue"
                   class="deep-orange--text text--accent-3"
                 >- {{obj.displayValue}}</span>
-                <span v-if="obj.score > .5" class="amber--text text--darken-1">- {{obj.displayValue}}</span>
                 <span
-                  v-if="obj.score === null"
+                  v-if="obj.score > .5 && obj.displayValue"
+                  class="amber--text text--darken-1"
+                >- {{obj.displayValue}}</span>
+                <span
+                  v-if="obj.score === null && obj.displayValue"
                   class="grey--text text--lighten-1"
                 >- {{obj.displayValue}}</span>
               </v-flex>
             </template>
             <v-card>
               <v-card-text>{{obj.description}}</v-card-text>
+              <v-data-table :headers="obj.details.headings" :items="obj.details.items" hide-actions>
+                <template v-slot:items="props">
+                  <td v-if="props.item.url">{{ props.item.url }}</td>
+                  <td v-if="props.item.group">{{ props.item.group }}</td>
+                  <td v-if="props.item.resourceType">{{ props.item.resourceType }}</td>
+                  <td v-if="props.item.requestCount">{{ props.item.requestCount }}</td>
+                  <td v-if="props.item.size">{{ props.item.size }}</td>
+                  <td v-if="props.item.cacheLifetimeMs">{{ props.item.cacheLifetimeMs }}</td>
+                  <td v-if="props.item.totalBytes">{{ props.item.totalBytes }}</td>
+                  <td v-if="props.item.wastedMs">{{ props.item.wastedMs }}</td>
+                  <td v-if="props.item.duration">{{ props.item.duration }}</td>
+                  <td v-if="props.item.total">{{ props.item.total }}</td>
+                  <td v-if="props.item.scripting">{{ props.item.scripting }}</td>
+                  <td v-if="props.item.scriptParseCompile">{{ props.item.scriptParseCompile }}</td>
+                  <td v-if="props.item.wastedBytes">{{ props.item.wastedBytes }}</td>
+                </template>
+              </v-data-table>
             </v-card>
           </v-expansion-panel-content>
         </v-expansion-panel>
