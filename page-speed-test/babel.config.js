@@ -3,6 +3,6 @@ module.exports = {
     '@vue/app'
   ],
   publicPath: process.env.NODE_ENV === 'production'
-    ? '/mm8hub/'
+    ? '/m8hub/'
     : '/'
 }
