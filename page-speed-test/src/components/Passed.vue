@@ -36,19 +36,45 @@
             <v-card>
               <v-card-text>{{obj.description}}</v-card-text>
               <v-data-table :headers="obj.details.headings" :items="obj.details.items" hide-actions>
+                <template v-slot:headers="props">
+                  <th
+                    v-for="header in props.headers"
+                    :key="header.$id"
+                  >{{ header.text || header.label}}</th>
+                </template>
                 <template v-slot:items="props">
+                  <td v-if="props.item.isCrossOrigin">
+                    <img :src="props.item.url" alt>
+                  </td>
                   <td v-if="props.item.url">{{ props.item.url }}</td>
                   <td v-if="props.item.group">{{ props.item.group }}</td>
                   <td v-if="props.item.resourceType">{{ props.item.resourceType }}</td>
-                  <td v-if="props.item.requestCount">{{ props.item.requestCount }}</td>
-                  <td v-if="props.item.size">{{ props.item.size }}</td>
-                  <td v-if="props.item.cacheLifetimeMs">{{ props.item.cacheLifetimeMs }}</td>
-                  <td v-if="props.item.totalBytes">{{ props.item.totalBytes }}</td>
-                  <td v-if="props.item.wastedMs">{{ props.item.wastedMs }}</td>
-                  <td v-if="props.item.duration">{{ props.item.duration }}</td>
-                  <td v-if="props.item.total">{{ props.item.total }}</td>
-                  <td v-if="props.item.scripting">{{ props.item.scripting }}</td>
-                  <td v-if="props.item.scriptParseCompile">{{ props.item.scriptParseCompile }}</td>
+                  <td
+                    v-if="props.item.requestCount || props.item.requestCount === 0"
+                  >{{ props.item.requestCount }}</td>
+                  <td v-if="props.item.size || props.item.size === 0">{{ props.item.size }}</td>
+                  <td
+                    v-if="props.item.cacheLifetimeMs || props.item.cacheLifetimeMs === 0"
+                  >{{ props.item.cacheLifetimeMs }}</td>
+                  <td
+                    v-if="props.item.totalBytes || props.item.totalBytes === 0"
+                  >{{ props.item.totalBytes }}</td>
+                  <td
+                    v-if="props.item.wastedMs || props.item.wastedMs === 0"
+                  >{{ props.item.wastedMs }}</td>
+                  <td
+                    v-if="props.item.duration || props.item.duration === 0"
+                  >{{ props.item.duration }}</td>
+                  <td v-if="props.item.total || props.item.total === 0">{{ props.item.total }}</td>
+                  <td
+                    v-if="props.item.scripting || props.item.scripting === 0"
+                  >{{ props.item.scripting }}</td>
+                  <td
+                    v-if="props.item.scriptParseCompile || props.item.scriptParseCompile === 0"
+                  >{{ props.item.scriptParseCompile }}</td>
+                  <td v-if="props.item.statistic">{{ props.item.statistic }}</td>
+                  <td v-if="props.item.element">{{ props.item.element.value }}</td>
+                  <td v-if="props.item.value">{{ props.item.value }}</td>
                   <td v-if="props.item.wastedBytes">{{ props.item.wastedBytes }}</td>
                 </template>
               </v-data-table>

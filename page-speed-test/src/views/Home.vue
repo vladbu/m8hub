@@ -60,23 +60,24 @@ export default {
           this.categories = this.response.lighthouseResult.categories.performance.auditRefs;
           this.categories.forEach(el => {
             for (let key in this.audits) {
+              let audit = this.audits[key];
               if (
-                el.id === this.audits[key].id &&
+                el.id === audit.id &&
                 el.group === "load-opportunities"
               ) {
-                if (this.showAsPassed(this.audits[key])) {
-                  this.passedAudits[key] = this.audits[key];
+                if (this.showAsPassed(audit)) {
+                  this.passedAudits[key] = audit;
                 } else {
-                  this.opportunityAudits[key] = this.audits[key];
+                  this.opportunityAudits[key] = audit;
                 }
               } else if (
-                el.id === this.audits[key].id &&
+                el.id === audit.id &&
                 el.group === "diagnostics"
               ) {
-                if (this.showAsPassed(this.audits[key])) {
-                  this.passedAudits[key] = this.audits[key];
+                if (this.showAsPassed(audit)) {
+                  this.passedAudits[key] = audit;
                 } else {
-                  this.diagnosticAudit[key] = this.audits[key];
+                  this.diagnosticAudit[key] = audit;
                 }
               }
             }
