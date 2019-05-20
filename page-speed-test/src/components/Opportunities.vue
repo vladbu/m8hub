@@ -79,7 +79,7 @@
                 </template>
                 <template v-slot:items="props">
                   <td v-if="props.item.isCrossOrigin">
-                    <img :src="props.item.url" alt>
+                    <img :src="props.item.url" style="width: 20vw;" alt>
                   </td>
                   <td v-if="props.item.url">{{ props.item.url }}</td>
                   <td v-if="props.item.group">{{ props.item.group }}</td>
