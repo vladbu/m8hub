@@ -50,7 +50,7 @@ export default {
     },
     searchValComp: {
       get() {
-        return this.searchVal;
+        return this.searchValn;
       },
       set(newVal) {
         return this.$emit("update:searchVal", newVal);
