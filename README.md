@@ -10,5 +10,5 @@ Repository for some projects made during learning frontend.
 6   |aditii|Markup project for Aditii template. Uses Glide.js and Hamburgers by Jonathan Suh.|[Repository](/aditii)|[Demo](https://vladbu.github.io/m8hub/aditii)
 7   |aditii-vue|Markup project for Aditii template. Made with Vue.js.|[Repository](/aditii-vue)|build required
 8   |vuetify-todo|Simple todo list. Made with Vue.js and Vuetify.|[Repository](/vuetify-todo)|build required
-9   |museum-app|App for exploring Rijksmuseum art objects. Made with Vue.js and Vuetify.|[Repository](/museum-app)|build required
+9   |museum-app|App for exploring Rijksmuseum art objects. Made with Vue.js and Vuetify.|[Repository](/museum-app)|build required (https://vladbu.github.io/m8hub/museum-app/dist/))
 10   |page-speed-test|App for displays Google Lighthouse audit for habr.com. Made with Vue.js and Vuetify.|[Repository](/page-speed-test)|[Demo](https://vladbu.github.io/m8hub/page-speed-test/dist/)
